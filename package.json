@@ -1,0 +1,26 @@
+{
+  "name": "news-graph",
+  "version": "0.0.0",
+  "description": "News media visualisation",
+  "main": "webpack.config.js",
+  "scripts": {
+    "build": "webpack && cp src/index.html docs/",
+    "dev": "webpack-dev-server --content-base src --inline --hot"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidchristie/news-graph.git"
+  },
+  "author": "David Christie",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/davidchristie/news-graph/issues"
+  },
+  "homepage": "https://github.com/davidchristie/news-graph#readme",
+  "dependencies": {
+    "webpack": "^1.14.0"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "^1.16.2"
+  }
+}
