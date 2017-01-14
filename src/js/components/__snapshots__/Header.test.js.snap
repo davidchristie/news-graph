@@ -1,0 +1,7 @@
+exports[`test Header renders correctly 1`] = `
+<header>
+  <h1>
+    Header
+  </h1>
+</header>
+`;
