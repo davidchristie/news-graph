@@ -3,5 +3,26 @@ exports[`test Header renders correctly 1`] = `
   <h1>
     Header
   </h1>
+  <div>
+    <h1>
+      Navbar
+    </h1>
+    <ul>
+      <li>
+        <a
+          onClick={[Function]}
+          style={Object {}}>
+          Home
+        </a>
+      </li>
+      <li>
+        <a
+          onClick={[Function]}
+          style={Object {}}>
+          About
+        </a>
+      </li>
+    </ul>
+  </div>
 </header>
 `;

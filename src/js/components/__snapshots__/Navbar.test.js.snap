@@ -1,0 +1,23 @@
+exports[`test Navbar renders correctly 1`] = `
+<div>
+  <h1>
+    Navbar
+  </h1>
+  <ul>
+    <li>
+      <a
+        onClick={[Function]}
+        style={Object {}}>
+        Home
+      </a>
+    </li>
+    <li>
+      <a
+        onClick={[Function]}
+        style={Object {}}>
+        About
+      </a>
+    </li>
+  </ul>
+</div>
+`;
