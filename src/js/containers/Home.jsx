@@ -1,33 +1,29 @@
-import React from 'react'
+import React, { PropTypes } from 'react'
+import { connect } from 'react-redux'
 
 import ArticleCards from '../components/ArticleCards'
 
-const exampleArticles = [
-  {
-    id: 1,
-    url: 'http://www.nature.com/news/ancient-retroviruses-emerged-half-a-billion-years-ago-1.21274'
-  },
-  {
-    id: 2,
-    url: 'https://www.theguardian.com/world/2017/jan/11/chamber-of-rats-mexico-parliaments-name-changed-in-google-maps-prank'
-  },
-  {
-    id: 3,
-    url: 'https://vimeo.com/192574852'
-  },
-  {
-    id: 4,
-    url: 'http://www.aljazeera.com/indepth/features/2017/01/india-love-hand-books-170108073151216.html'
-  }
-]
-
-export default class Home extends React.Component {
+const Home = class Home extends React.Component {
   render() {
+    const articles = this.props.articles
     return (
       <div>
         <h1>Home</h1>
-        <ArticleCards articles={exampleArticles} />
+        <ArticleCards articles={articles} />
       </div>
     )
   }
 }
+
+Home.propTypes = {
+  articles: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    url: PropTypes.string.isRequired
+  }).isRequired).isRequired
+}
+
+function mapStateToProps(state) {
+  return { articles: state.app.articles }
+}
+
+export default connect(mapStateToProps)(Home)
