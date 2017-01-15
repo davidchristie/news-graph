@@ -1,9 +1,7 @@
 exports[`test ArticlePage renders correctly 1`] = `
 <div>
   <h1>
-    ArticlePage (
-    http://www.nature.com/news/ancient-retroviruses-emerged-half-a-billion-years-ago-1.21274
-    )
+    Ancient retroviruses emerged half a billion years ago : Nature News & Comment
   </h1>
   <div
     className="row">

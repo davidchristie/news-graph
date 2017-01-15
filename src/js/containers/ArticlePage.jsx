@@ -8,15 +8,15 @@ const ArticlePage = class ArticlePage extends React.Component {
     const id = Number(this.props.params.id)
     const articles = this.props.articles
     const article = articles.find(article => article.id === id)
-    const url = article.url
+    const title = article.title
     return (
       <div>
-        <h1>ArticlePage ({url})</h1>
+        <h1>{title}</h1>
         <div className="row">
           <div className="card col-md-12">
             <div className="card-block">
               <h2 className="card-title">Connections</h2>
-              <ArticleNetwork />
+              <ArticleNetwork article={article} />
             </div>
           </div>
         </div>
@@ -28,6 +28,7 @@ const ArticlePage = class ArticlePage extends React.Component {
 ArticlePage.propTypes = {
   articles: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
     url: PropTypes.string.isRequired
   }).isRequired).isRequired,
   params: PropTypes.shape({

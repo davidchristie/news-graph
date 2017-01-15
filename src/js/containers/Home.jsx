@@ -8,7 +8,7 @@ import PostArticle from './PostArticle'
 const Home = class Home extends React.Component {
   render() {
     const title = 'Home'
-    const articles = this.props.articles.reverse()
+    const articles = this.props.articles
     return (
       <div>
         <Jumbotron title={title}>

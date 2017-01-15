@@ -15,7 +15,7 @@ const ArticleNetwork = class ArticleNetwork extends React.Component {
     const nodes = articles.map(article => {
       const node = {
         id: article.id,
-        label: article.url
+        label: article.title
       }
       // TODO Highlight the selected article
       // if (article.id ===this.props.article.id)
@@ -51,6 +51,7 @@ const ArticleNetwork = class ArticleNetwork extends React.Component {
         shape: 'dot'
       },
       edges: {
+        arrows: 'to',
         color: 'lightgray'
       }
     }
@@ -78,9 +79,12 @@ const ArticleNetwork = class ArticleNetwork extends React.Component {
 }
 
 ArticleNetwork.propTypes = {
+  article: PropTypes.shape({
+    id: PropTypes.number.isRequired
+  }),
   articles: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.number.isRequired,
-    url: PropTypes.string.isRequired
+    title: PropTypes.string.isRequired
   }).isRequired).isRequired,
   connections: PropTypes.arrayOf(PropTypes.shape({
     from: PropTypes.number.isRequired,

@@ -9,10 +9,12 @@ import About from './components/About'
 import Layout from './components/Layout'
 import ArticlePage from './containers/ArticlePage'
 import Home from './containers/Home'
+import initialState from './examples/initial-state'
 import reducers from './reducers'
 
 const store = createStore(
   reducers,
+  initialState,
   applyMiddleware(logger())
 )
 

@@ -1,33 +1,6 @@
 let nextId = 1
 
-const initialState = [
-  {
-    from: 1,
-    id: nextId++,
-    name: 'Sourced by',
-    to: 2
-  },
-  {
-    from: 2,
-    id: nextId++,
-    name: 'Sourced by',
-    to: 3
-  },
-  {
-    from: 3,
-    id: nextId++,
-    name: 'Response to',
-    to: 1
-  },
-  {
-    from: 3,
-    id: nextId++,
-    name: 'Response to',
-    to: 4
-  }
-]
-
-export default (state=initialState, action) => {
+export default (state=[], action) => {
   switch (action.type) {
   case 'ADD_CONNECTION':
     return [...state, {
