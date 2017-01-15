@@ -4,6 +4,9 @@ module.exports = {
     path: './docs',
     filename: 'client.js'
   },
+  proxy: {
+    '**': 'http://localhost:8080'
+  },
   module: {
     loaders: [{
       test: /\.jsx?$/,

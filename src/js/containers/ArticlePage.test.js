@@ -50,7 +50,7 @@ const initialState = {
         from: 3,
         id: 4,
         name: 'Response to',
-        to: 2
+        to: 4
       }
     ]
   }
