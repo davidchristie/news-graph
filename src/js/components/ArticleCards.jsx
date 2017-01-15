@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react'
-import Article from './Article'
+import ArticleCard from './ArticleCard'
 
-export default class Articles extends React.Component {
+export default class ArticleCards extends React.Component {
   render() {
     const articles = this.props.articles
     return (
@@ -9,8 +9,8 @@ export default class Articles extends React.Component {
         <div className="container">
           <div className="row">
             <div className="card-group">
-              {articles.reverse().map(article =>
-                <Article
+              {articles.map(article =>
+                <ArticleCard
                   key={article.id}
                   article={article}
                 />
@@ -23,7 +23,7 @@ export default class Articles extends React.Component {
   }
 }
 
-Articles.propTypes = {
+ArticleCards.propTypes = {
   articles: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.number.isRequired,
     url: PropTypes.string.isRequired

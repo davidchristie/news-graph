@@ -3,16 +3,16 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 
-import Article from './Article'
+import ArticleCard from './ArticleCard'
 
 const exampleArticle = {
   id: 1,
   url: 'http://www.nature.com/news/ancient-retroviruses-emerged-half-a-billion-years-ago-1.21274'
 }
 
-test('Article renders correctly', () => {
+test('ArticleCard renders correctly', () => {
   const tree = renderer.create(
-    <Article article={exampleArticle} />
+    <ArticleCard article={exampleArticle} />
   ).toJSON()
   expect(tree).toMatchSnapshot()
 })

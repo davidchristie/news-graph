@@ -1,8 +1,10 @@
 import React, { PropTypes } from 'react'
+import { Link } from 'react-router'
 
-export default class Article extends React.Component {
+export default class ArticleCard extends React.Component {
   render() {
     const article = this.props.article
+    const id = article.id
     const url = article.url
     return (
       <div className="card col-md-6 col-lg-4">
@@ -10,12 +12,13 @@ export default class Article extends React.Component {
         <p>
           Some details about the article.
         </p>
+        <Link className="btn" to={`article/${id}`}>Details</Link>
       </div>
     )
   }
 }
 
-Article.propTypes = {
+ArticleCard.propTypes = {
   article: PropTypes.shape({
     url: PropTypes.string.isRequired
   }).isRequired

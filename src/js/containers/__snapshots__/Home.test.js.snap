@@ -15,19 +15,16 @@ exports[`test Home renders correctly 1`] = `
             className="card col-md-6 col-lg-4">
             <a
               className="embedly-card"
-              href="http://www.aljazeera.com/indepth/features/2017/01/india-love-hand-books-170108073151216.html" />
+              href="http://www.nature.com/news/ancient-retroviruses-emerged-half-a-billion-years-ago-1.21274" />
             <p>
               Some details about the article.
             </p>
-          </div>
-          <div
-            className="card col-md-6 col-lg-4">
             <a
-              className="embedly-card"
-              href="https://vimeo.com/192574852" />
-            <p>
-              Some details about the article.
-            </p>
+              className="btn"
+              onClick={[Function]}
+              style={Object {}}>
+              Details
+            </a>
           </div>
           <div
             className="card col-md-6 col-lg-4">
@@ -37,15 +34,42 @@ exports[`test Home renders correctly 1`] = `
             <p>
               Some details about the article.
             </p>
+            <a
+              className="btn"
+              onClick={[Function]}
+              style={Object {}}>
+              Details
+            </a>
           </div>
           <div
             className="card col-md-6 col-lg-4">
             <a
               className="embedly-card"
-              href="http://www.nature.com/news/ancient-retroviruses-emerged-half-a-billion-years-ago-1.21274" />
+              href="https://vimeo.com/192574852" />
             <p>
               Some details about the article.
             </p>
+            <a
+              className="btn"
+              onClick={[Function]}
+              style={Object {}}>
+              Details
+            </a>
+          </div>
+          <div
+            className="card col-md-6 col-lg-4">
+            <a
+              className="embedly-card"
+              href="http://www.aljazeera.com/indepth/features/2017/01/india-love-hand-books-170108073151216.html" />
+            <p>
+              Some details about the article.
+            </p>
+            <a
+              className="btn"
+              onClick={[Function]}
+              style={Object {}}>
+              Details
+            </a>
           </div>
         </div>
       </div>

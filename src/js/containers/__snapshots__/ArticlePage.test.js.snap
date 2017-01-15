@@ -1,0 +1,9 @@
+exports[`test ArticlePage renders correctly 1`] = `
+<div>
+  <h1>
+    ArticlePage (
+    1
+    )
+  </h1>
+</div>
+`;

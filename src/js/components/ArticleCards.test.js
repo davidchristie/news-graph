@@ -1,6 +1,9 @@
-import React from 'react'
+/* eslint-disable no-undef */
 
-import Articles from './Articles'
+import React from 'react'
+import renderer from 'react-test-renderer'
+
+import ArticleCards from './ArticleCards'
 
 const exampleArticles = [
   {
@@ -21,13 +24,9 @@ const exampleArticles = [
   }
 ]
 
-export default class Home extends React.Component {
-  render() {
-    return (
-      <div>
-        <h1>Home</h1>
-        <Articles articles={exampleArticles} />
-      </div>
-    )
-  }
-}
+test('ArticleCards renders correctly', () => {
+  const tree = renderer.create(
+    <ArticleCards articles={exampleArticles} />
+  ).toJSON()
+  expect(tree).toMatchSnapshot()
+})
