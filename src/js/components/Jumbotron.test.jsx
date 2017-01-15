@@ -3,11 +3,11 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 
-import Header from './Header'
+import Jumbotron from './Jumbotron'
 
-test('Header renders correctly', () => {
+test('Jumbotron renders correctly', () => {
   const tree = renderer.create(
-    <Header />
+    <Jumbotron title="jumbotron" />
   ).toJSON()
   expect(tree).toMatchSnapshot()
 })

@@ -2,20 +2,18 @@ import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
 
 import ArticleCards from '../components/ArticleCards'
+import Jumbotron from '../components/Jumbotron'
 import PostArticle from './PostArticle'
 
 const Home = class Home extends React.Component {
   render() {
+    const title = 'Home'
     const articles = this.props.articles.reverse()
     return (
       <div>
-        <div className="jumbotron">
-          <h1 className="display-3">Home</h1>
-          <p className="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-          <hr className="my-4" />
-          <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+        <Jumbotron title={title}>
           <PostArticle />
-        </div>
+        </Jumbotron>
         <ArticleCards articles={articles} />
       </div>
     )

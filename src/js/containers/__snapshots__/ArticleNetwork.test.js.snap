@@ -5,7 +5,7 @@ exports[`test ArticleNetwork renders correctly 1`] = `
       "backgroundColor": "#333333",
       "border": "1px solid lightgray",
       "height": "400px",
-      "width": "600px",
+      "width": "100%",
     }
   } />
 `;

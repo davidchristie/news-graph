@@ -1,15 +1,24 @@
 import React, { PropTypes } from 'react'
+import { connect } from 'react-redux'
 
 import ArticleNetwork from './ArticleNetwork'
 
-export default class ArticlePage extends React.Component {
+const ArticlePage = class ArticlePage extends React.Component {
   render() {
-    const id = this.props.params.id
+    const id = Number(this.props.params.id)
+    const articles = this.props.articles
+    const article = articles.find(article => article.id === id)
+    const url = article.url
     return (
-      <div className="container">
-        <h1>ArticlePage ({id})</h1>
+      <div>
+        <h1>ArticlePage ({url})</h1>
         <div className="row">
-          <ArticleNetwork />
+          <div className="card col-md-12">
+            <div className="card-block">
+              <h2 className="card-title">Connections</h2>
+              <ArticleNetwork />
+            </div>
+          </div>
         </div>
       </div>
     )
@@ -17,7 +26,19 @@ export default class ArticlePage extends React.Component {
 }
 
 ArticlePage.propTypes = {
+  articles: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    url: PropTypes.string.isRequired
+  }).isRequired).isRequired,
   params: PropTypes.shape({
     id: PropTypes.string.isRequired
   }).isRequired
 }
+
+function mapStateToProps(state) {
+  return {
+    articles: state.app.articles
+  }
+}
+
+export default connect(mapStateToProps)(ArticlePage)

@@ -1,33 +1,35 @@
 exports[`test Home renders correctly 1`] = `
 <div>
-  <div
-    className="jumbotron">
-    <h1
-      className="display-3">
-      Home
-    </h1>
-    <p
-      className="lead">
-      This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.
-    </p>
-    <hr
-      className="my-4" />
-    <p>
-      It uses utility classes for typography and spacing to space content out within the larger container.
-    </p>
-    <form
-      onSubmit={[Function]}>
-      <label>
-        Article:
+  <div>
+    <div
+      className="jumbotron">
+      <h1
+        className="display-3">
+        Home
+      </h1>
+      <p
+        className="lead">
+        This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.
+      </p>
+      <hr
+        className="my-4" />
+      <p>
+        It uses utility classes for typography and spacing to space content out within the larger container.
+      </p>
+      <form
+        onSubmit={[Function]}>
+        <label>
+          Article:
+          <input
+            onChange={[Function]}
+            type="url"
+            value="" />
+        </label>
         <input
-          onChange={[Function]}
-          type="url"
-          value="" />
-      </label>
-      <input
-        type="submit"
-        value="POST" />
-    </form>
+          type="submit"
+          value="POST" />
+      </form>
+    </div>
   </div>
   <div
     className="album text-muted">
