@@ -1,0 +1,15 @@
+exports[`test PostArticle renders correctly 1`] = `
+<form
+  onSubmit={[Function]}>
+  <label>
+    Article:
+    <input
+      onChange={[Function]}
+      type="url"
+      value="" />
+  </label>
+  <input
+    type="submit"
+    value="POST" />
+</form>
+`;
