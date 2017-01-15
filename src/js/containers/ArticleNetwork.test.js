@@ -26,6 +26,32 @@ const initialState = {
         id: 4,
         url: 'http://www.aljazeera.com/indepth/features/2017/01/india-love-hand-books-170108073151216.html'
       }
+    ],
+    connections: [
+      {
+        from: 1,
+        id: 1,
+        name: 'Sourced by',
+        to: 2
+      },
+      {
+        from: 2,
+        id: 2,
+        name: 'Sourced by',
+        to: 3
+      },
+      {
+        from: 3,
+        id: 3,
+        name: 'Response to',
+        to: 1
+      },
+      {
+        from: 3,
+        id: 4,
+        name: 'Response to',
+        to: 2
+      }
     ]
   }
 }
