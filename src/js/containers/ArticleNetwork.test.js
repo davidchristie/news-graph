@@ -5,7 +5,7 @@ import { Provider } from 'react-redux'
 import renderer from 'react-test-renderer'
 import configureStore from 'redux-mock-store'
 
-import ArticlePage from './ArticlePage'
+import ArticleNetwork from './ArticleNetwork'
 
 const initialState = {
   app: {
@@ -31,10 +31,10 @@ const initialState = {
 }
 const store = configureStore()(initialState)
 
-test('ArticlePage renders correctly', () => {
+test('ArticleNetwork renders correctly', () => {
   const tree = renderer.create(
     <Provider store={store}>
-      <ArticlePage params={{id: '1'}}/>
+      <ArticleNetwork />
     </Provider>
   ).toJSON()
   expect(tree).toMatchSnapshot()

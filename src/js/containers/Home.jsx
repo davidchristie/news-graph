@@ -30,7 +30,9 @@ Home.propTypes = {
 }
 
 function mapStateToProps(state) {
-  return { articles: state.app.articles }
+  return {
+    articles: state.app.articles
+  }
 }
 
 export default connect(mapStateToProps)(Home)
