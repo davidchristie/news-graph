@@ -12,7 +12,7 @@ export default class ArticleCard extends React.Component {
         <p>
           Some details about the article.
         </p>
-        <Link className="btn" to={`article/${id}`}>Details</Link>
+        <Link className="btn btn-outline-secondary" to={`article/${id}`}>Details</Link>
       </div>
     )
   }
