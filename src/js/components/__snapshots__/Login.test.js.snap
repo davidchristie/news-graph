@@ -1,0 +1,68 @@
+exports[`test Login renders correctly 1`] = `
+<div
+  className="dropdown">
+  <button
+    aria-expanded="false"
+    aria-haspopup="true"
+    className="btn btn-success dropdown-toggle"
+    data-toggle="dropdown"
+    id="dropdownLogin"
+    type="button">
+    Login
+  </button>
+  <div
+    aria-labelledby="dropdownLogin"
+    className="dropdown-menu dropdown-menu-right"
+    style={
+      Object {
+        "minWidth": "300px",
+      }
+    }>
+    <form
+      acceptCharset="UTF-8"
+      action="/users/login"
+      id="login-nav"
+      method="post"
+      role="form">
+      <div
+        className="dropdown-item">
+        <label
+          className="sr-only"
+          htmlFor="email">
+          Email address
+        </label>
+        <input
+          className="form-control"
+          id="email"
+          name="email"
+          placeholder="Email address"
+          required={true}
+          type="email" />
+      </div>
+      <div
+        className="dropdown-item">
+        <label
+          className="sr-only"
+          htmlFor="password">
+          Password
+        </label>
+        <input
+          className="form-control"
+          id="password"
+          name="password"
+          placeholder="Password"
+          required={true}
+          type="password" />
+      </div>
+      <div
+        className="dropdown-item">
+        <button
+          className="btn btn-outline-success btn-block"
+          type="submit">
+          Sign in
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+`;

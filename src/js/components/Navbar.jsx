@@ -1,6 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router'
 
+import Login from './Login'
+import Search from './Search'
+
 export default class Navbar extends React.Component {
   render() {
     return (
@@ -30,12 +33,23 @@ export default class Navbar extends React.Component {
               </div>
             </li>
 
+            <li className="nav-item">
+              <Search />
+            </li>
+
           </ul>
 
-          <form className="form-inline my-2 my-md-0">
-            <input className="form-control mr-sm-2" type="text" placeholder="Search" />
-            <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-          </form>
+          <ul className="nav navbar-nav navbar-right">
+
+            <li className="nav-item">
+              <Link to="/join" className="btn btn-primary">Signup</Link>
+            </li>
+
+            <li className="nav-item">
+              <Login />
+            </li>
+
+          </ul>
 
         </div>
       </nav>

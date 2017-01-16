@@ -77,25 +77,122 @@ exports[`test Layout renders correctly 1`] = `
             </a>
           </div>
         </li>
+        <li
+          className="nav-item">
+          <form
+            className="form-inline my-2 my-md-0">
+            <input
+              className="form-control mr-sm-2"
+              placeholder="Search"
+              type="text" />
+            <button
+              className="btn btn-outline-success my-2 my-sm-0"
+              type="submit">
+              Search
+            </button>
+          </form>
+        </li>
       </ul>
-      <form
-        className="form-inline my-2 my-md-0">
-        <input
-          className="form-control mr-sm-2"
-          placeholder="Search"
-          type="text" />
-        <button
-          className="btn btn-outline-success my-2 my-sm-0"
-          type="submit">
-          Search
-        </button>
-      </form>
+      <ul
+        className="nav navbar-nav navbar-right">
+        <li
+          className="nav-item">
+          <a
+            className="btn btn-primary"
+            onClick={[Function]}
+            style={Object {}}>
+            Signup
+          </a>
+        </li>
+        <li
+          className="nav-item">
+          <div
+            className="dropdown">
+            <button
+              aria-expanded="false"
+              aria-haspopup="true"
+              className="btn btn-success dropdown-toggle"
+              data-toggle="dropdown"
+              id="dropdownLogin"
+              type="button">
+              Login
+            </button>
+            <div
+              aria-labelledby="dropdownLogin"
+              className="dropdown-menu dropdown-menu-right"
+              style={
+                Object {
+                  "minWidth": "300px",
+                }
+              }>
+              <form
+                acceptCharset="UTF-8"
+                action="/users/login"
+                id="login-nav"
+                method="post"
+                role="form">
+                <div
+                  className="dropdown-item">
+                  <label
+                    className="sr-only"
+                    htmlFor="email">
+                    Email address
+                  </label>
+                  <input
+                    className="form-control"
+                    id="email"
+                    name="email"
+                    placeholder="Email address"
+                    required={true}
+                    type="email" />
+                </div>
+                <div
+                  className="dropdown-item">
+                  <label
+                    className="sr-only"
+                    htmlFor="password">
+                    Password
+                  </label>
+                  <input
+                    className="form-control"
+                    id="password"
+                    name="password"
+                    placeholder="Password"
+                    required={true}
+                    type="password" />
+                </div>
+                <div
+                  className="dropdown-item">
+                  <button
+                    className="btn btn-outline-success btn-block"
+                    type="submit">
+                    Sign in
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </li>
+      </ul>
     </div>
   </nav>
-  <footer>
-    <h1>
-      Footer
-    </h1>
+  <footer
+    className="bd-footer text-muted"
+    style={
+      Object {
+        "marginTop": "100px",
+      }
+    }>
+    <div
+      className="container">
+      <a
+        href="https://github.com/davidchristie/news-graph">
+        GitHub
+      </a>
+      <p>
+        Insert footer content here.
+      </p>
+    </div>
   </footer>
 </div>
 `;

@@ -6,16 +6,14 @@ export default class ArticleCards extends React.Component {
     const articles = this.props.articles
     return (
       <div className="album text-muted">
-        <div className="container">
-          <div className="row">
-            <div className="card-group">
-              {articles.map(article =>
-                <ArticleCard
-                  key={article.id}
-                  article={article}
-                />
-              )}
-            </div>
+        <div className="row">
+          <div className="card-group">
+            {articles.map(article =>
+              <ArticleCard
+                key={article.id}
+                article={article}
+              />
+            )}
           </div>
         </div>
       </div>

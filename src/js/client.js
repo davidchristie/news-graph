@@ -6,6 +6,7 @@ import { applyMiddleware, createStore } from 'redux'
 import logger from 'redux-logger'
 
 import About from './components/About'
+import Join from './components/Join'
 import Layout from './components/Layout'
 import ArticlePage from './containers/ArticlePage'
 import Home from './containers/Home'
@@ -25,6 +26,7 @@ ReactDOM.render(
         <IndexRoute component={Home} />
         <Route path="about" component={About} />
         <Route path="article/:id" component={ArticlePage} />
+        <Route path="join" component={Join} />
       </Route>
     </Router>
   </Provider>,
