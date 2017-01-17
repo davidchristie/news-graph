@@ -1,3 +1,4 @@
+import dotenv from 'dotenv'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
@@ -5,19 +6,29 @@ import { browserHistory, IndexRoute, Route, Router } from 'react-router'
 import { applyMiddleware, createStore } from 'redux'
 import logger from 'redux-logger'
 
+import { addArticle } from './actions'
+import * as api from './api'
 import About from './components/About'
 import Join from './components/Join'
 import Layout from './components/Layout'
 import ArticlePage from './containers/ArticlePage'
 import Home from './containers/Home'
-import initialState from './examples/initial-state'
+// import initialState from './examples/initial-state'
 import reducers from './reducers'
+
+dotenv.config()
 
 const store = createStore(
   reducers,
-  initialState,
   applyMiddleware(logger())
 )
+
+// Load articles from the API
+api.getArticles().then(articles => {
+  articles.forEach(article => {
+    store.dispatch(addArticle(article))
+  })
+})
 
 ReactDOM.render(
   <Provider store={store}>

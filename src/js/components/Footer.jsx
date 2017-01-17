@@ -5,9 +5,11 @@ export default class Footer extends React.Component {
     return (
       <footer className="bd-footer text-muted" style={{marginTop: '100px'}}>
         <div className="container">
-          <a href="https://github.com/davidchristie/news-graph">GitHub</a>
           <p>
-            Insert footer content here.
+            <a href="https://github.com/davidchristie/news-graph">GitHub</a>
+          </p>
+          <p>
+            Powered by <a href="https://newsapi.org">NewsAPI.org</a>
           </p>
         </div>
       </footer>

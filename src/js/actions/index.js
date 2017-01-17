@@ -1,3 +1,10 @@
+export function addArticle(article) {
+  return {
+    article,
+    type: 'ADD_ARTICLE'
+  }
+}
+
 export function addConnection(name, from, to) {
   return {
     from: from,

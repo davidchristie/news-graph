@@ -15,6 +15,7 @@ const ArticleNetwork = class ArticleNetwork extends React.Component {
     const nodes = articles.map(article => {
       const node = {
         id: article.id,
+        image: article.urlToImage,
         label: article.title
       }
       // TODO Highlight the selected article
@@ -48,7 +49,7 @@ const ArticleNetwork = class ArticleNetwork extends React.Component {
           background: '#6AAFFF'
         },
         font:{color:'#eeeeee'},
-        shape: 'dot'
+        shape: 'circularImage'
       },
       edges: {
         arrows: 'to',

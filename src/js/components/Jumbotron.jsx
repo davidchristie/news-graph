@@ -4,13 +4,15 @@ export default class Jumbotron extends React.Component {
   render() {
     const children = this.props.children
     const title = this.props.title
+    const lead=this.props.lead
+    const text = this.props.text
     return (
       <div>
         <div className="jumbotron">
           <h1 className="display-3">{title}</h1>
-          <p className="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+          <p className="lead">{lead}</p>
           <hr className="my-4" />
-          <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+          <p>{text}</p>
           {children}
         </div>
       </div>
@@ -20,5 +22,7 @@ export default class Jumbotron extends React.Component {
 
 Jumbotron.propTypes = {
   children: PropTypes.element,
+  lead: PropTypes.string,
+  text: PropTypes.string,
   title: PropTypes.string.isRequired
 }
