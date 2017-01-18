@@ -2,78 +2,44 @@ import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
 import vis from 'vis'
 
-const ArticleNetwork = class ArticleNetwork extends React.Component {
-  constructor (props) {
-    super(props)
-    this.createNetwork = this.createNetwork.bind(this)
+const options = {
+  nodes: {
+    borderWidth: 4,
+    size: 30,
+    color: {
+      border: '#406897',
+      background: '#6AAFFF'
+    },
+    font: {color: '#eeeeee'},
+    shape: 'circularImage'
+  },
+  edges: {
+    arrows: 'to',
+    color: 'lightgray'
   }
-  createNetwork () {
-    const articles = this.props.articles
-    const connections = this.props.connections
-    const nodes = articles.map(article => {
-      const node = {
-        id: article.id,
-        image: article.urlToImage,
-        label: article.title
-      }
-      // TODO Highlight the selected article
-      // if (article.id ===this.props.article.id)
-      // node.color = {
-      //   border: '#FF5733'
-      // }
-      return node
-    })
+}
 
-    const edges = connections.map(connection => {
-      return {
-        from: connection.from,
-        id: connection.id,
-        label: connection.name,
-        to: connection.to
-      }
-    })
-
-    const data = {
-      nodes,
-      edges
-    }
-
-    const options = {
-      nodes: {
-        borderWidth: 4,
-        size: 30,
-        color: {
-          border: '#406897',
-          background: '#6AAFFF'
-        },
-        font: {color: '#eeeeee'},
-        shape: 'circularImage'
-      },
-      edges: {
-        arrows: 'to',
-        color: 'lightgray'
-      }
-    }
-    this.network = new vis.Network(this.container, data, options)
+const ArticleNetwork = function ArticleNetwork (props) {
+  const articles = props.articles
+  const connections = props.connections
+  const data = {articles, connections}
+  const style = {
+    width: '100%',
+    height: '400px',
+    border: '1px solid lightgray',
+    backgroundColor: '#333333'
   }
-  render () {
-    return (
-      <div
-        ref={container => {
+  return (
+    <div
+      ref={
+        container => {
           if (container) {
-            this.container = container
-            this.createNetwork()
+            createNetwork(container, data, options)
           }
         }}
-        style={{
-          width: '100%',
-          height: '400px',
-          border: '1px solid lightgray',
-          backgroundColor: '#333333'
-        }}
-      />
-    )
-  }
+      style={style}
+    />
+  )
 }
 
 ArticleNetwork.propTypes = {
@@ -92,11 +58,35 @@ ArticleNetwork.propTypes = {
   }).isRequired).isRequired
 }
 
-function mapStateToProps (state) {
+function articleToNode (article) {
+  return {
+    id: article.id,
+    image: article.urlToImage,
+    label: article.title
+  }
+}
+
+function connectionToEdge (connection) {
+  return {
+    from: connection.from,
+    id: connection.id,
+    label: connection.name,
+    to: connection.to
+  }
+}
+
+function createNetwork (container, data, options) {
+  const { articles, connections } = data
+  const nodes = articles.map(articleToNode)
+  const edges = connections.map(connectionToEdge)
+  return new vis.Network(container, {edges, nodes}, options)
+}
+
+function stateToProps (state) {
   return {
     articles: state.app.articles,
     connections: state.app.connections
   }
 }
 
-export default connect(mapStateToProps)(ArticleNetwork)
+export default connect(stateToProps)(ArticleNetwork)
