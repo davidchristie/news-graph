@@ -12,8 +12,8 @@ export function getArticles () {
   // return axios(`https://newsapi.org/v1/articles?source=techcrunch&apiKey=${KEY}`)
   //   .then(response => response.data.articles)
 
-  // XXX Loads to many articles
   // return getSources()
+  //   .then(sources => sources.slice(0, 10))
   //   .then(sources => {
   //     return Promise.all(sources.map(source => getArticlesFromSourceId(source.id)))
   //       .then(values => {
