@@ -1,2 +1,4 @@
-node_modules/
 .env
+node_modules/
+public/client.js
+public/client.js.map

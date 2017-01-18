@@ -11,7 +11,7 @@ const options = {
       background: '#6AAFFF'
     },
     font: {color: '#eeeeee'},
-    shape: 'circularImage'
+    shape: 'dot'
   },
   edges: {
     arrows: 'to',
@@ -61,7 +61,6 @@ ArticleNetwork.propTypes = {
 function articleToNode (article) {
   return {
     id: article.id,
-    image: article.urlToImage,
     label: article.title
   }
 }

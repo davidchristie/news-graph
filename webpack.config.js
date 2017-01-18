@@ -1,16 +1,8 @@
-const Dotenv = require('dotenv-webpack')
-
 module.exports = {
-  entry: './src/js/client.js',
+  entry: './src/client/index.js',
   output: {
-    path: './dist',
+    path: './public',
     filename: 'client.js'
-  },
-  proxy: {
-    '**': 'http://localhost:8080'
-  },
-  node: {
-    fs: 'empty'
   },
   module: {
     loaders: [{
@@ -19,9 +11,9 @@ module.exports = {
       exclude: /node_modules/
     }]
   },
-  plugins: [
-    new Dotenv()
-  ],
+  node: {
+    fs: 'empty'
+  },
   resolve: {
     extensions: ['', '.js', '.jsx']
   },
