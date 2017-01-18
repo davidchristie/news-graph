@@ -2,9 +2,9 @@ import axios from 'axios'
 
 export function getArticles () {
 
-  return getArticlesFromSourceId('the-guardian-uk')
+  // return getArticlesFromSourceId('the-guardian-uk')
 
-  // return getArticlesFromSourceId('google-news')
+  return getArticlesFromSourceId('google-news')
 
   // getSources().then(sources => console.log('Sources:', (sources)))
 

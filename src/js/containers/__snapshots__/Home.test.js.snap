@@ -8,14 +8,10 @@ exports[`test Home renders correctly 1`] = `
         Home
       </h1>
       <p
-        className="lead">
-        This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.
-      </p>
+        className="lead" />
       <hr
         className="my-4" />
-      <p>
-        It uses utility classes for typography and spacing to space content out within the larger container.
-      </p>
+      <p />
       <form
         onSubmit={[Function]}>
         <label>
@@ -32,71 +28,85 @@ exports[`test Home renders correctly 1`] = `
     </div>
   </div>
   <div
-    className="album text-muted">
+    className="card-columns">
     <div
-      className="row">
+      className="card">
+      <img
+        alt="Card image cap"
+        className="card-img-top img-fluid"
+        src={undefined} />
       <div
-        className="card-group">
-        <div
-          className="card col-md-6 col-lg-4">
-          <a
-            className="embedly-card"
-            href="http://www.nature.com/news/ancient-retroviruses-emerged-half-a-billion-years-ago-1.21274" />
-          <p>
-            Some details about the article.
-          </p>
-          <a
-            className="btn"
-            onClick={[Function]}
-            style={Object {}}>
-            Details
-          </a>
-        </div>
-        <div
-          className="card col-md-6 col-lg-4">
-          <a
-            className="embedly-card"
-            href="https://www.theguardian.com/world/2017/jan/11/chamber-of-rats-mexico-parliaments-name-changed-in-google-maps-prank" />
-          <p>
-            Some details about the article.
-          </p>
-          <a
-            className="btn"
-            onClick={[Function]}
-            style={Object {}}>
-            Details
-          </a>
-        </div>
-        <div
-          className="card col-md-6 col-lg-4">
-          <a
-            className="embedly-card"
-            href="https://vimeo.com/192574852" />
-          <p>
-            Some details about the article.
-          </p>
-          <a
-            className="btn"
-            onClick={[Function]}
-            style={Object {}}>
-            Details
-          </a>
-        </div>
-        <div
-          className="card col-md-6 col-lg-4">
-          <a
-            className="embedly-card"
-            href="http://www.aljazeera.com/indepth/features/2017/01/india-love-hand-books-170108073151216.html" />
-          <p>
-            Some details about the article.
-          </p>
-          <a
-            className="btn"
-            onClick={[Function]}
-            style={Object {}}>
-            Details
-          </a>
-        </div>
+        className="card-block">
+        <a
+          onClick={[Function]}
+          style={Object {}}>
+          <h4
+            className="card-title">
+            Ancient retroviruses emerged half a billion years ago : Nature News & Comment
+          </h4>
+        </a>
+        <p
+          className="card-text" />
+      </div>
+    </div>
+    <div
+      className="card">
+      <img
+        alt="Card image cap"
+        className="card-img-top img-fluid"
+        src={undefined} />
+      <div
+        className="card-block">
+        <a
+          onClick={[Function]}
+          style={Object {}}>
+          <h4
+            className="card-title">
+            \'Chamber of Rats\': Mexican parliament renamed in Google Maps prank | World news | The Guardian
+          </h4>
+        </a>
+        <p
+          className="card-text" />
+      </div>
+    </div>
+    <div
+      className="card">
+      <img
+        alt="Card image cap"
+        className="card-img-top img-fluid"
+        src={undefined} />
+      <div
+        className="card-block">
+        <a
+          onClick={[Function]}
+          style={Object {}}>
+          <h4
+            className="card-title">
+            Godka Cirka - A Hole in the Sky (Trailer) on Vimeo
+          </h4>
+        </a>
+        <p
+          className="card-text" />
+      </div>
+    </div>
+    <div
+      className="card">
+      <img
+        alt="Card image cap"
+        className="card-img-top img-fluid"
+        src={undefined} />
+      <div
+        className="card-block">
+        <a
+          onClick={[Function]}
+          style={Object {}}>
+          <h4
+            className="card-title">
+            India: For the love of second-hand books | India | Al Jazeera
+          </h4>
+        </a>
+        <p
+          className="card-text" />
       </div>
     </div>
   </div>

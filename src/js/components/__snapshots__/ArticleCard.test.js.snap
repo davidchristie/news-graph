@@ -1,17 +1,20 @@
 exports[`test ArticleCard renders correctly 1`] = `
 <div
-  className="card col-md-6 col-lg-4">
-  <a
-    className="embedly-card"
-    href="http://www.nature.com/news/ancient-retroviruses-emerged-half-a-billion-years-ago-1.21274" />
-  <p>
-    Some details about the article.
-  </p>
-  <a
-    className="btn"
-    onClick={[Function]}
-    style={Object {}}>
-    Details
-  </a>
+  className="card">
+  <img
+    alt="Card image cap"
+    className="card-img-top img-fluid"
+    src={undefined} />
+  <div
+    className="card-block">
+    <a
+      onClick={[Function]}
+      style={Object {}}>
+      <h4
+        className="card-title" />
+    </a>
+    <p
+      className="card-text" />
+  </div>
 </div>
 `;

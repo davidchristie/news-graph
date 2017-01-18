@@ -24,11 +24,12 @@ const store = createStore(
 )
 
 // Load articles from the API
-api.getArticles().then(articles => {
-  articles.forEach(article => {
-    store.dispatch(addArticle(article))
+api.getArticles()
+  .then(articles => {
+    articles.forEach(article => {
+      store.dispatch(addArticle(article))
+    })
   })
-})
 
 ReactDOM.render(
   <Provider store={store}>
