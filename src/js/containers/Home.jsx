@@ -6,7 +6,7 @@ import Jumbotron from '../components/Jumbotron'
 import PostArticle from './PostArticle'
 
 const Home = class Home extends React.Component {
-  render() {
+  render () {
     const title = 'Home'
     const articles = this.props.articles
     return (
@@ -27,7 +27,7 @@ Home.propTypes = {
   }).isRequired).isRequired
 }
 
-function mapStateToProps(state) {
+function mapStateToProps (state) {
   return {
     articles: state.app.articles
   }

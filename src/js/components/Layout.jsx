@@ -4,7 +4,7 @@ import Footer from './Footer'
 import Navbar from './Navbar'
 
 export default class Layout extends React.Component {
-  render() {
+  render () {
     const children = this.props.children
     return (
       <div>

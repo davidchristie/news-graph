@@ -1,11 +1,11 @@
-export function addArticle(article) {
+export function addArticle (article) {
   return {
     article,
     type: 'ADD_ARTICLE'
   }
 }
 
-export function addConnection(name, from, to) {
+export function addConnection (name, from, to) {
   return {
     from: from,
     name: name,
@@ -14,9 +14,9 @@ export function addConnection(name, from, to) {
   }
 }
 
-export function postArticle(url) {
+export function postArticle (url) {
   return {
     url,
-    type: 'POST_ARTICLE',
+    type: 'POST_ARTICLE'
   }
 }

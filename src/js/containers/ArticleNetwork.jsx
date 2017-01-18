@@ -3,15 +3,13 @@ import { connect } from 'react-redux'
 import vis from 'vis'
 
 const ArticleNetwork = class ArticleNetwork extends React.Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
     this.createNetwork = this.createNetwork.bind(this)
   }
-  createNetwork() {
-
+  createNetwork () {
     const articles = this.props.articles
     const connections = this.props.connections
-
     const nodes = articles.map(article => {
       const node = {
         id: article.id,
@@ -42,13 +40,13 @@ const ArticleNetwork = class ArticleNetwork extends React.Component {
 
     const options = {
       nodes: {
-        borderWidth:4,
-        size:30,
+        borderWidth: 4,
+        size: 30,
         color: {
           border: '#406897',
           background: '#6AAFFF'
         },
-        font:{color:'#eeeeee'},
+        font: {color: '#eeeeee'},
         shape: 'circularImage'
       },
       edges: {
@@ -56,10 +54,9 @@ const ArticleNetwork = class ArticleNetwork extends React.Component {
         color: 'lightgray'
       }
     }
-
-    new vis.Network(this.container, data, options)
+    this.network = new vis.Network(this.container, data, options)
   }
-  render() {
+  render () {
     return (
       <div
         ref={container => {
@@ -92,10 +89,10 @@ ArticleNetwork.propTypes = {
     id: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,
     to: PropTypes.number.isRequired
-  }).isRequired).isRequired,
+  }).isRequired).isRequired
 }
 
-function mapStateToProps(state) {
+function mapStateToProps (state) {
   return {
     articles: state.app.articles,
     connections: state.app.connections

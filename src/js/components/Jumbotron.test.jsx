@@ -7,7 +7,7 @@ import Jumbotron from './Jumbotron'
 
 test('Jumbotron renders correctly', () => {
   const tree = renderer.create(
-    <Jumbotron title="jumbotron" />
+    <Jumbotron title='jumbotron' />
   ).toJSON()
   expect(tree).toMatchSnapshot()
 })

@@ -3,7 +3,7 @@ import React from 'react'
 import Jumbotron from './Jumbotron'
 
 export default class About extends React.Component {
-  render() {
+  render () {
     const title = 'About'
     return (
       <div>

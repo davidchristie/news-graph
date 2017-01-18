@@ -30,11 +30,11 @@ api.getArticles()
 ReactDOM.render(
   <Provider store={store}>
     <Router history={browserHistory}>
-      <Route path="/" component={Layout}>
+      <Route path='/' component={Layout}>
         <IndexRoute component={Home} />
-        <Route path="about" component={About} />
-        <Route path="article/:id" component={ArticlePage} />
-        <Route path="join" component={Join} />
+        <Route path='about' component={About} />
+        <Route path='article/:id' component={ArticlePage} />
+        <Route path='join' component={Join} />
       </Route>
     </Router>
   </Provider>,

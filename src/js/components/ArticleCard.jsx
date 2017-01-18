@@ -6,7 +6,7 @@ function footer (publishedAt) {
   const date = moment(publishedAt).format('MMMM Do YYYY, h:mm:ss a')
   if (publishedAt) {
     return (
-      <div className="card-footer">
+      <div className='card-footer'>
         {date}
       </div>
     )
@@ -23,13 +23,13 @@ export default class ArticleCard extends React.Component {
     const urlToImage = article.urlToImage
     const publishedAt = article.publishedAt
     return (
-      <div className="card">
-        <img className="card-img-top img-fluid" src={urlToImage} alt="Card image cap"/>
-        <div className="card-block">
+      <div className='card'>
+        <img className='card-img-top img-fluid' src={urlToImage} alt='Card image cap' />
+        <div className='card-block'>
           <Link to={`article/${id}`}>
-            <h4 className="card-title">{title}</h4>
+            <h4 className='card-title'>{title}</h4>
           </Link>
-          <p className="card-text">{description}</p>
+          <p className='card-text'>{description}</p>
         </div>
         {footer(publishedAt)}
       </div>

@@ -2,10 +2,10 @@ import React, { PropTypes } from 'react'
 import ArticleCard from './ArticleCard'
 
 export default class ArticleCards extends React.Component {
-  render() {
+  render () {
     const articles = this.props.articles
     return (
-      <div className="card-columns">
+      <div className='card-columns'>
         {articles.map(article =>
           <ArticleCard
             key={article.id}

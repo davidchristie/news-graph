@@ -5,7 +5,7 @@ import ArticleNetwork from './ArticleNetwork'
 import Jumbotron from '../components/Jumbotron'
 
 const ArticlePage = class ArticlePage extends React.Component {
-  render() {
+  render () {
     const id = Number(this.props.params.id)
     const articles = this.props.articles
     const article = articles.find(article => article.id === id)
@@ -14,9 +14,9 @@ const ArticlePage = class ArticlePage extends React.Component {
     return (
       <div>
         <Jumbotron title={title} lead={description} />
-        <div className="card">
-          <div className="card-block">
-            <h2 className="card-title">Connections</h2>
+        <div className='card'>
+          <div className='card-block'>
+            <h2 className='card-title'>Connections</h2>
             <ArticleNetwork article={article} />
           </div>
         </div>
@@ -36,7 +36,7 @@ ArticlePage.propTypes = {
   }).isRequired
 }
 
-function mapStateToProps(state) {
+function mapStateToProps (state) {
   return {
     articles: state.app.articles
   }
