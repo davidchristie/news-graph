@@ -4,17 +4,25 @@ exports[`test ArticleCard renders correctly 1`] = `
   <img
     alt="Card image cap"
     className="card-img-top img-fluid"
-    src={undefined} />
+    src="https://img.washingtonpost.com/rf/image_1484w/2010-2019/WashingtonPost/2017/01/17/National-Security/Images/2017-01-17T213419Z_1610403415_RC1318C7FA70_RTRMADP_3_USA-JUSTICE-MANNING.jpg" />
   <div
     className="card-block">
     <a
       onClick={[Function]}
       style={Object {}}>
       <h4
-        className="card-title" />
+        className="card-title">
+        Obama commutes sentence of Chelsea Manning, soldier convicted for leaking classified information
+      </h4>
     </a>
     <p
-      className="card-text" />
+      className="card-text">
+      White House officials say the president thought Manning’s 35-year sentence was excessive.
+    </p>
+  </div>
+  <div
+    className="card-footer">
+    January 18th 2017, 3:34:00 am
   </div>
 </div>
 `;

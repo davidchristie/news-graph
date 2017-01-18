@@ -3,12 +3,13 @@
 import React from 'react'
 import { Provider } from 'react-redux'
 import renderer from 'react-test-renderer'
-import configureStore from 'redux-mock-store'
+import { createStore } from 'redux'
 
 import Home from './Home'
-import initialState from '../examples/initial-state'
+import reducer from '../reducers'
+import state from '../states/example'
 
-const store = configureStore()(initialState)
+const store = createStore(reducer, state)
 
 test('Home renders correctly', () => {
   const tree = renderer.create(

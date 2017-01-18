@@ -3,12 +3,13 @@
 import React from 'react'
 import { Provider } from 'react-redux'
 import renderer from 'react-test-renderer'
-import configureStore from 'redux-mock-store'
+import { createStore } from 'redux'
 
 import PostArticle from './PostArticle'
+import reducer from '../reducers'
+import state from '../states/example'
 
-const initialState = {}
-const store = configureStore()(initialState)
+const store = createStore(reducer, state)
 
 test('PostArticle renders correctly', () => {
   const tree = renderer.create(

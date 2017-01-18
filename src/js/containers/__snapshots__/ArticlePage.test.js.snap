@@ -5,10 +5,12 @@ exports[`test ArticlePage renders correctly 1`] = `
       className="jumbotron">
       <h1
         className="display-3">
-        Ancient retroviruses emerged half a billion years ago : Nature News & Comment
+        Obama commutes sentence of Chelsea Manning, soldier convicted for leaking classified information
       </h1>
       <p
-        className="lead" />
+        className="lead">
+        White House officials say the president thought Manning’s 35-year sentence was excessive.
+      </p>
       <hr
         className="my-4" />
       <p />

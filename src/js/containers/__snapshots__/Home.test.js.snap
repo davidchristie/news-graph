@@ -34,7 +34,7 @@ exports[`test Home renders correctly 1`] = `
       <img
         alt="Card image cap"
         className="card-img-top img-fluid"
-        src={undefined} />
+        src="https://img.washingtonpost.com/rf/image_1484w/2010-2019/WashingtonPost/2017/01/17/National-Security/Images/2017-01-17T213419Z_1610403415_RC1318C7FA70_RTRMADP_3_USA-JUSTICE-MANNING.jpg" />
       <div
         className="card-block">
         <a
@@ -42,11 +42,17 @@ exports[`test Home renders correctly 1`] = `
           style={Object {}}>
           <h4
             className="card-title">
-            Ancient retroviruses emerged half a billion years ago : Nature News & Comment
+            Obama commutes sentence of Chelsea Manning, soldier convicted for leaking classified information
           </h4>
         </a>
         <p
-          className="card-text" />
+          className="card-text">
+          White House officials say the president thought Manning’s 35-year sentence was excessive.
+        </p>
+      </div>
+      <div
+        className="card-footer">
+        January 18th 2017, 3:34:00 am
       </div>
     </div>
     <div
@@ -54,7 +60,7 @@ exports[`test Home renders correctly 1`] = `
       <img
         alt="Card image cap"
         className="card-img-top img-fluid"
-        src={undefined} />
+        src="http://v.politico.com/images/1155968404/201701/597/1155968404_5286029568001_5285969147001-vs.jpg?pubId=1155968404" />
       <div
         className="card-block">
         <a
@@ -62,11 +68,13 @@ exports[`test Home renders correctly 1`] = `
           style={Object {}}>
           <h4
             className="card-title">
-            \'Chamber of Rats\': Mexican parliament renamed in Google Maps prank | World news | The Guardian
+            DeVos dodges toughest questions about public school plans
           </h4>
         </a>
         <p
-          className="card-text" />
+          className="card-text">
+          Despite some stumbles, she appears on the path to confirmation
+        </p>
       </div>
     </div>
     <div
@@ -74,7 +82,7 @@ exports[`test Home renders correctly 1`] = `
       <img
         alt="Card image cap"
         className="card-img-top img-fluid"
-        src={undefined} />
+        src="http://s4.reutersmedia.net/resources/r/?m=02&d=20170118&t=2&i=1169148118&w=&fh=545px&fw=&ll=&pl=&sq=&r=LYNXMPED0H0HV" />
       <div
         className="card-block">
         <a
@@ -82,11 +90,17 @@ exports[`test Home renders correctly 1`] = `
           style={Object {}}>
           <h4
             className="card-title">
-            Godka Cirka - A Hole in the Sky (Trailer) on Vimeo
+            Former U.S. President George H.W. Bush hospitalized: media
           </h4>
         </a>
         <p
-          className="card-text" />
+          className="card-text">
+          Former U.S. President George H.W. Bush has been hospitalized in Houston, CBS Houston affiliate KHOU television reported on Wednesday, citing his office chief of staff.
+        </p>
+      </div>
+      <div
+        className="card-footer">
+        January 18th 2017, 9:01:16 pm
       </div>
     </div>
     <div
@@ -94,7 +108,7 @@ exports[`test Home renders correctly 1`] = `
       <img
         alt="Card image cap"
         className="card-img-top img-fluid"
-        src={undefined} />
+        src="http://www.gannett-cdn.com/-mm-/7ec592efb9e39f5edb0976fd2f132e225c675af5/c=0-476-5021-3313&r=x1683&c=3200x1680/local/-/media/2017/01/18/USATODAY/USATODAY/636203050768483218-AP-APTOPIX-INAUGURATION-SECURITY-87940632.JPG" />
       <div
         className="card-block">
         <a
@@ -102,11 +116,173 @@ exports[`test Home renders correctly 1`] = `
           style={Object {}}>
           <h4
             className="card-title">
-            India: For the love of second-hand books | India | Al Jazeera
+            Government pays $24 million to settle Secret Service discrimination case
           </h4>
         </a>
         <p
-          className="card-text" />
+          className="card-text">
+          The federal government pays $24 million to settle a long-running discrimination case in the Secret Service
+        </p>
+      </div>
+      <div
+        className="card-footer">
+        January 18th 2017, 9:00:09 pm
+      </div>
+    </div>
+    <div
+      className="card">
+      <img
+        alt="Card image cap"
+        className="card-img-top img-fluid"
+        src="https://timedotcom.files.wordpress.com/2017/01/gettyimages-631919392.jpg?quality=85&w=1012" />
+      <div
+        className="card-block">
+        <a
+          onClick={[Function]}
+          style={Object {}}>
+          <h4
+            className="card-title">
+            Former Apprentice Contestant Sues Donald Trump for Defamation
+          </h4>
+        </a>
+        <p
+          className="card-text">
+          She accused Trump of sexually assaulting her when she asked for career advice
+        </p>
+      </div>
+      <div
+        className="card-footer">
+        January 18th 2017, 8:39:05 am
+      </div>
+    </div>
+    <div
+      className="card">
+      <img
+        alt="Card image cap"
+        className="card-img-top img-fluid"
+        src="http://www.gannett-cdn.com/-mm-/4b9ede3820a54fc558b9aa527e18601b331caee4/c=0-50-534-352&r=x633&c=1200x630/local/-/media/2017/01/17/USATODAY/USATODAY/636202759570402423-little-elm-2.jpg" />
+      <div
+        className="card-block">
+        <a
+          onClick={[Function]}
+          style={Object {}}>
+          <h4
+            className="card-title">
+            Texas police officer shot, killed; suspect dies in standoff
+          </h4>
+        </a>
+        <p
+          className="card-text">
+          A Little Elm, Texas, police officer was shot Tuesday afternoon, according to authorities.
+        </p>
+      </div>
+      <div
+        className="card-footer">
+        January 18th 2017, 6:18:14 pm
+      </div>
+    </div>
+    <div
+      className="card">
+      <img
+        alt="Card image cap"
+        className="card-img-top img-fluid"
+        src="https://static01.nyt.com/images/2017/01/18/world/middleeast/18nigeria2/18nigeria2-facebookJumbo.jpg" />
+      <div
+        className="card-block">
+        <a
+          onClick={[Function]}
+          style={Object {}}>
+          <h4
+            className="card-title">
+            Nigerian Jet Mistakenly Bombs Refugee Camp, Killing Scores
+          </h4>
+        </a>
+        <p
+          className="card-text">
+          The bombing struck a government-run camp in Rann, near the Cameroonian and Chadian borders, an area where Boko Haram had recently increased attacks.
+        </p>
+      </div>
+      <div
+        className="card-footer">
+        January 18th 2017, 6:27:53 pm
+      </div>
+    </div>
+    <div
+      className="card">
+      <img
+        alt="Card image cap"
+        className="card-img-top img-fluid"
+        src="http://s4.reutersmedia.net/resources/r/?m=02&d=20170117&t=2&i=1169021701&w=&fh=545px&fw=&ll=&pl=&sq=&r=LYNXMPED0G0WY" />
+      <div
+        className="card-block">
+        <a
+          onClick={[Function]}
+          style={Object {}}>
+          <h4
+            className="card-title">
+            Britain to leave EU market as May sets \'hard Brexit\' course
+          </h4>
+        </a>
+        <p
+          className="card-text">
+          Britain will quit the EU single market when it leaves the European Union, Prime Minister Theresa May said on Tuesday in a decisive speech that set a course for a clean break with the world\'s largest trading bloc.
+        </p>
+      </div>
+      <div
+        className="card-footer">
+        January 18th 2017, 10:09:28 am
+      </div>
+    </div>
+    <div
+      className="card">
+      <img
+        alt="Card image cap"
+        className="card-img-top img-fluid"
+        src="http://s1.reutersmedia.net/resources/r/?m=02&d=20170118&t=2&i=1169143813&w=&fh=545px&fw=&ll=&pl=&sq=&r=LYNXMPED0H0G0" />
+      <div
+        className="card-block">
+        <a
+          onClick={[Function]}
+          style={Object {}}>
+          <h4
+            className="card-title">
+            British tour operator evacuating 1,000 Gambia holidaymakers
+          </h4>
+        </a>
+        <p
+          className="card-text">
+          British tour operator Thomas Cook started evacuating nearly 1,000 holidaymakers from Gambia on Wednesday after President Yahya Jammeh declared a state of emergency on his final day in office, increasing the chances of civil unrest.
+        </p>
+      </div>
+      <div
+        className="card-footer">
+        January 18th 2017, 9:29:05 pm
+      </div>
+    </div>
+    <div
+      className="card">
+      <img
+        alt="Card image cap"
+        className="card-img-top img-fluid"
+        src="https://timedotcom.files.wordpress.com/2017/01/samantha-power.jpeg?quality=85&w=1012" />
+      <div
+        className="card-block">
+        <a
+          onClick={[Function]}
+          style={Object {}}>
+          <h4
+            className="card-title">
+            Read the Full Text of Samantha Power\'s Scathing Speech on Russia
+          </h4>
+        </a>
+        <p
+          className="card-text">
+          \"For years, we have seen Russia take one aggressive and destabilizing action after another\"
+        </p>
+      </div>
+      <div
+        className="card-footer">
+        January 18th 2017, 7:09:49 am
       </div>
     </div>
   </div>
