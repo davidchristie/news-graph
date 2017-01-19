@@ -11,9 +11,6 @@ module.exports = {
       exclude: /node_modules/
     }]
   },
-  node: {
-    fs: 'empty'
-  },
   resolve: {
     extensions: ['', '.js', '.jsx']
   },

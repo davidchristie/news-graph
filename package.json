@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "description": "News media visualisation",
   "scripts": {
-    "dev": "webpack-dev-server --content-base src --inline --hot --history-api-fallback",
-    "start": "node src/server & webpack --watch",
+    "knex": "knex",
+    "start": "nodemon src/server & webpack --watch",
     "test": "standard src && jest"
   },
   "repository": {
@@ -22,6 +22,12 @@
       "es2015",
       "react"
     ]
+  },
+  "dependencies": {
+    "body-parser": "^1.16.0",
+    "cors": "^2.8.1",
+    "express": "^4.14.0",
+    "knex": "^0.12.6"
   },
   "devDependencies": {
     "axios": "^0.15.3",
@@ -41,14 +47,9 @@
     "react-router": "^3.0.1",
     "react-test-renderer": "^15.4.2",
     "redux": "^3.6.0",
+    "sqlite3": "^3.1.8",
     "standard": "^8.6.0",
     "vis": "^4.17.0",
-    "webpack": "^1.14.0",
-    "webpack-dev-server": "^1.16.2"
-  },
-  "dependencies": {
-    "body-parser": "^1.16.0",
-    "cors": "^2.8.1",
-    "express": "^4.14.0"
+    "webpack": "^1.14.0"
   }
 }
