@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router'
 
-import Login from './Login'
+import Account from '../containers/Account'
 import Search from './Search'
 
 export default class Navbar extends React.Component {
@@ -35,17 +35,7 @@ export default class Navbar extends React.Component {
 
           </ul>
 
-          <ul className='nav navbar-nav navbar-right'>
-
-            <li className='nav-link'>
-              <Link to='/join' className='btn btn-primary'>Signup</Link>
-            </li>
-
-            <li className='nav-link'>
-              <Login />
-            </li>
-
-          </ul>
+          <Account />
 
         </div>
       </nav>

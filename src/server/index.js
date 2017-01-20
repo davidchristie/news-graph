@@ -4,6 +4,6 @@ const server = require('./server')
 
 dotenv.config()
 
-const PORT = process.env.PORT || 3000
+const port = process.env.port || 8080
 
-server.listen(PORT, () => console.log('Listening on port', PORT))
+server.listen(port, () => console.log('http://localhost:' + port))
