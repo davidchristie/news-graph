@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 
 import { postArticle } from '../actions'
 
-class PostArticle extends React.Component {
+export class PostArticle extends React.Component {
   constructor (props) {
     super(props)
     this.state = {value: ''}

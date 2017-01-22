@@ -19,7 +19,7 @@ const options = {
   }
 }
 
-const ArticleNetwork = function ArticleNetwork (props) {
+export const ArticleNetwork = function ArticleNetwork (props) {
   const articles = props.articles
   const connections = props.connections
   const data = {articles, connections}

@@ -5,7 +5,7 @@ import ArticleCards from '../components/ArticleCards'
 import Jumbotron from '../components/Jumbotron'
 import PostArticle from './PostArticle'
 
-const Home = class Home extends React.Component {
+export const Home = class Home extends React.Component {
   render () {
     const title = 'Home'
     const articles = this.props.articles

@@ -1,0 +1,11 @@
+exports[`test Account renders correctly 1`] = `
+<ul
+  className="nav navbar-nav navbar-right">
+  <li
+    className="nav-link"
+    onClick={[Function]}>
+    <Logout
+      onClick={[Function]} />
+  </li>
+</ul>
+`;

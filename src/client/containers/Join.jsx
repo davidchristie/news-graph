@@ -1,11 +1,10 @@
 import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
-import { browserHistory } from 'react-router'
 
 import { signup } from '../actions/account'
 import Jumbotron from '../components/Jumbotron'
 
-const Join = class Join extends React.Component {
+export const Join = class Join extends React.Component {
 
   constructor (props) {
     super(props)

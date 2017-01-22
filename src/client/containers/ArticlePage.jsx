@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import ArticleNetwork from './ArticleNetwork'
 import Jumbotron from '../components/Jumbotron'
 
-const ArticlePage = class ArticlePage extends React.Component {
+export const ArticlePage = class ArticlePage extends React.Component {
   render () {
     const id = Number(this.props.params.id)
     const articles = this.props.articles

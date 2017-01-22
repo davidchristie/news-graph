@@ -6,7 +6,7 @@ import { login, logout } from '../actions/account'
 import Login from '../components/Login'
 import Logout from '../components/Logout'
 
-const Account = class Account extends Component {
+export const Account = class Account extends Component {
   render () {
     const dispatch = this.props.dispatch
     let content = null
