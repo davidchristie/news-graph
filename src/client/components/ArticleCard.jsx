@@ -39,6 +39,7 @@ export default class ArticleCard extends React.Component {
 
 ArticleCard.propTypes = {
   article: PropTypes.shape({
+    id: PropTypes.number.isRequired,
     url: PropTypes.string.isRequired
   }).isRequired
 }

@@ -4,25 +4,26 @@ exports[`test ArticleCard renders correctly 1`] = `
   <img
     alt="Card image cap"
     className="card-img-top img-fluid"
-    src="https://img.washingtonpost.com/rf/image_1484w/2010-2019/WashingtonPost/2017/01/17/National-Security/Images/2017-01-17T213419Z_1610403415_RC1318C7FA70_RTRMADP_3_USA-JUSTICE-MANNING.jpg" />
+    src="http://s1.reutersmedia.net/resources/r/?m=02&d=20170118&t=2&i=1169143813&w=&fh=545px&fw=&ll=&pl=&sq=&r=LYNXMPED0H0G0" />
   <div
     className="card-block">
-    <a
-      onClick={[Function]}
-      style={Object {}}>
+    <Link
+      onlyActiveOnIndex={false}
+      style={Object {}}
+      to="article/1">
       <h4
         className="card-title">
-        Obama commutes sentence of Chelsea Manning, soldier convicted for leaking classified information
+        British tour operator evacuating 1,000 Gambia holidaymakers
       </h4>
-    </a>
+    </Link>
     <p
       className="card-text">
-      White House officials say the president thought Manning’s 35-year sentence was excessive.
+      British tour operator Thomas Cook started evacuating nearly 1,000 holidaymakers from Gambia on Wednesday after President Yahya Jammeh declared a state of emergency on his final day in office, increasing the chances of civil unrest.
     </p>
   </div>
   <div
     className="card-footer">
-    January 18th 2017, 3:34:00 am
+    January 18th 2017, 9:29:05 pm
   </div>
 </div>
 `;

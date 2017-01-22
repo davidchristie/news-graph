@@ -20,9 +20,8 @@ exports[`test Login renders correctly 1`] = `
     }>
     <form
       acceptCharset="UTF-8"
-      action="/users/login"
       id="login-nav"
-      method="post"
+      onSubmit={[Function]}
       role="form">
       <div
         className="dropdown-item">

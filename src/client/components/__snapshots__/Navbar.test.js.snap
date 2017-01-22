@@ -12,12 +12,13 @@ exports[`test Navbar renders correctly 1`] = `
     <span
       className="navbar-toggler-icon" />
   </button>
-  <a
+  <Link
     className="navbar-brand"
-    onClick={[Function]}
-    style={Object {}}>
+    onlyActiveOnIndex={false}
+    style={Object {}}
+    to="/">
     News Graph
-  </a>
+  </Link>
   <div
     className="collapse navbar-collapse"
     id="navbarMenu">
@@ -25,12 +26,14 @@ exports[`test Navbar renders correctly 1`] = `
       className="navbar-nav mr-auto">
       <li
         className="nav-link">
-        <a
+        <Link
+          activeClassName="active"
           className="nav-link"
-          onClick={[Function]}
-          style={Object {}}>
+          onlyActiveOnIndex={false}
+          style={Object {}}
+          to="about">
           About
-        </a>
+        </Link>
       </li>
       <li
         className="nav-link dropdown">
@@ -65,104 +68,10 @@ exports[`test Navbar renders correctly 1`] = `
       </li>
       <li
         className="nav-item">
-        <nav
-          className="navbar">
-          <form
-            className="form-inline">
-            <input
-              className="form-control mr-sm-2"
-              placeholder="Search"
-              type="text" />
-            <button
-              className="btn btn-outline-success my-2 my-sm-0"
-              type="submit">
-              Search
-            </button>
-          </form>
-        </nav>
+        <Search />
       </li>
     </ul>
-    <ul
-      className="nav navbar-nav navbar-right">
-      <li
-        className="nav-link">
-        <a
-          className="btn btn-primary"
-          onClick={[Function]}
-          style={Object {}}>
-          Signup
-        </a>
-      </li>
-      <li
-        className="nav-link">
-        <div
-          className="dropdown">
-          <button
-            aria-expanded="false"
-            aria-haspopup="true"
-            className="btn btn-success dropdown-toggle"
-            data-toggle="dropdown"
-            id="dropdownLogin"
-            type="button">
-            Login
-          </button>
-          <div
-            aria-labelledby="dropdownLogin"
-            className="dropdown-menu dropdown-menu-right"
-            style={
-              Object {
-                "minWidth": "300px",
-              }
-            }>
-            <form
-              acceptCharset="UTF-8"
-              action="/users/login"
-              id="login-nav"
-              method="post"
-              role="form">
-              <div
-                className="dropdown-item">
-                <label
-                  className="sr-only"
-                  htmlFor="email">
-                  Email address
-                </label>
-                <input
-                  className="form-control"
-                  id="email"
-                  name="email"
-                  placeholder="Email address"
-                  required={true}
-                  type="email" />
-              </div>
-              <div
-                className="dropdown-item">
-                <label
-                  className="sr-only"
-                  htmlFor="password">
-                  Password
-                </label>
-                <input
-                  className="form-control"
-                  id="password"
-                  name="password"
-                  placeholder="Password"
-                  required={true}
-                  type="password" />
-              </div>
-              <div
-                className="dropdown-item">
-                <button
-                  className="btn btn-outline-success btn-block"
-                  type="submit">
-                  Sign in
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </li>
-    </ul>
+    <Connect(Account) />
   </div>
 </nav>
 `;

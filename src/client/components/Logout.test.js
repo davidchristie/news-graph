@@ -4,9 +4,11 @@ import React from 'react'
 import { shallow } from 'enzyme'
 import toJson from 'enzyme-to-json'
 
-import Navbar from './Navbar'
+import Logout from './Logout'
 
-test('Navbar renders correctly', () => {
-  const wrapper = shallow(<Navbar />)
+const onClick = () => {}
+
+test('Logout renders correctly', () => {
+  const wrapper = shallow(<Logout onClick={onClick} />)
   expect(toJson(wrapper)).toMatchSnapshot()
 })

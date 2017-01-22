@@ -1,13 +1,14 @@
 /* eslint-env jest */
 
 import React from 'react'
-import renderer from 'react-test-renderer'
+import { shallow } from 'enzyme'
+import toJson from 'enzyme-to-json'
 
 import Login from './Login'
 
+const onSubmit = () => {}
+
 test('Login renders correctly', () => {
-  const tree = renderer.create(
-    <Login />
-  ).toJSON()
-  expect(tree).toMatchSnapshot()
+  const wrapper = shallow(<Login onSubmit={onSubmit} />)
+  expect(toJson(wrapper)).toMatchSnapshot()
 })

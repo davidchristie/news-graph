@@ -1,16 +1,13 @@
 /* eslint-env jest */
 
 import React from 'react'
-import renderer from 'react-test-renderer'
+import { shallow } from 'enzyme'
+import toJson from 'enzyme-to-json'
 
 import ArticleCards from './ArticleCards'
-import state from '../states/example'
-
-const articles = state.app.articles
+import articles from '../examples/articles'
 
 test('ArticleCards renders correctly', () => {
-  const tree = renderer.create(
-    <ArticleCards articles={articles} />
-  ).toJSON()
-  expect(tree).toMatchSnapshot()
+  const wrapper = shallow(<ArticleCards articles={articles} />)
+  expect(toJson(wrapper)).toMatchSnapshot()
 })

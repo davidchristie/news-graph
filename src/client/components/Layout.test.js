@@ -1,13 +1,12 @@
 /* eslint-env jest */
 
 import React from 'react'
-import renderer from 'react-test-renderer'
+import { shallow } from 'enzyme'
+import toJson from 'enzyme-to-json'
 
 import Layout from './Layout'
 
 test('Layout renders correctly', () => {
-  const tree = renderer.create(
-    <Layout />
-  ).toJSON()
-  expect(tree).toMatchSnapshot()
+  const wrapper = shallow(<Layout />)
+  expect(toJson(wrapper)).toMatchSnapshot()
 })

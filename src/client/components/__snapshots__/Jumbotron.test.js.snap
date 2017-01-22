@@ -4,7 +4,7 @@ exports[`test Jumbotron renders correctly 1`] = `
     className="jumbotron">
     <h1
       className="display-3">
-      jumbotron
+      Title
     </h1>
     <p
       className="lead" />

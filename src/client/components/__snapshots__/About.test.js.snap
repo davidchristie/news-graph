@@ -1,18 +1,6 @@
 exports[`test About renders correctly 1`] = `
 <div>
-  <div>
-    <div
-      className="jumbotron">
-      <h1
-        className="display-3">
-        About
-      </h1>
-      <p
-        className="lead" />
-      <hr
-        className="my-4" />
-      <p />
-    </div>
-  </div>
+  <Jumbotron
+    title="About" />
 </div>
 `;
