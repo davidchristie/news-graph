@@ -3,7 +3,7 @@ exports.up = function (knex) {
     table.increments('id').primary()
     table.string('name').unique()
     table.string('email').unique()
-    table.string('hash_password')
+    table.string('password')
   })
 }
 

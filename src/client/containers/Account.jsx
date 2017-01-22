@@ -1,61 +1,49 @@
-import React, { PropTypes } from 'react'
+import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { browserHistory, Link } from 'react-router'
 
-import { loginSuccess, logout } from '../actions'
-import { login } from '../api'
+import { login, logout } from '../actions/account'
 import Login from '../components/Login'
+import Logout from '../components/Logout'
 
-function Account (props) {
-  let content = null
-  if (props.profile) {
-    const clickLogout = () => {
-      props.dispatch(logout())
-      browserHistory.push('/')
+const Account = class Account extends Component {
+  render () {
+    const dispatch = this.props.dispatch
+    let content = null
+    if (this.props.profile) {
+      const clickLogout = () => {
+        dispatch(logout())
+        browserHistory.push('/')
+      }
+      content = (
+        <ul className='nav navbar-nav navbar-right'>
+          <li className='nav-link' onClick={clickLogout}>
+            <Logout onClick={clickLogout} />
+          </li>
+        </ul>
+      )
+    } else {
+      const submitLogin = event => {
+        event.preventDefault()
+        const form = event.target
+        const inputs = form.getElementsByTagName('input')
+        const email = inputs[0].value
+        const password = inputs[1].value
+        dispatch(login({email, password}))
+      }
+      content = (
+        <ul className='nav navbar-nav navbar-right'>
+          <li className='nav-link'>
+            <Link to='/join' className='btn btn-primary'>Signup</Link>
+          </li>
+          <li className='nav-link'>
+            <Login onSubmit={submitLogin} />
+          </li>
+        </ul>
+      )
     }
-    content = (
-      <ul className='nav navbar-nav navbar-right'>
-        <li className='nav-link' onClick={clickLogout}>
-          <Logout />
-        </li>
-      </ul>
-    )
-  } else {
-    const submitLogin = event => {
-      event.preventDefault()
-      const form = event.target
-      const inputs = form.getElementsByTagName('input')
-      const email = inputs[0].value
-      const password = inputs[1].value
-      login(email, password).then(response => {
-        if (response.success) {
-          props.dispatch(loginSuccess(response))
-          browserHistory.push('/')
-        } else {
-
-        }
-      })
-    }
-    content = (
-      <ul className='nav navbar-nav navbar-right'>
-        <li className='nav-link'>
-          <Link to='/join' className='btn btn-primary'>Signup</Link>
-        </li>
-        <li className='nav-link'>
-          <Login onSubmit={submitLogin} />
-        </li>
-      </ul>
-    )
+    return content
   }
-  return content
-}
-
-function Logout (props) {
-  return (
-    <button className='btn btn-danger' onClick={props.onClick}>
-      Logout
-    </button>
-  )
 }
 
 Account.propTypes = {
@@ -66,6 +54,6 @@ Account.propTypes = {
 
 export default connect(state => {
   return {
-    profile: state.app.profile
+    profile: state.app.account.profile
   }
 })(Account)

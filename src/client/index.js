@@ -2,7 +2,6 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import { browserHistory, IndexRoute, Route, Router } from 'react-router'
-import { createStore } from 'redux'
 
 import { addArticle } from './actions'
 import * as api from './api'
@@ -11,9 +10,7 @@ import Join from './containers/Join'
 import Layout from './components/Layout'
 import ArticlePage from './containers/ArticlePage'
 import Home from './containers/Home'
-import reducers from './reducers'
-
-const store = createStore(reducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+import store from './store'
 
 // Load articles from the API
 api.getArticles()

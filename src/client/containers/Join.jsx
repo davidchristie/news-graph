@@ -2,8 +2,7 @@ import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { browserHistory } from 'react-router'
 
-import { signupFailure, signupSuccess } from '../actions'
-import { signup } from '../api'
+import { signup } from '../actions/account'
 import Jumbotron from '../components/Jumbotron'
 
 const Join = class Join extends React.Component {
@@ -12,31 +11,45 @@ const Join = class Join extends React.Component {
     super(props)
     this.inputs = {}
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.state = {alerts: []}
   }
 
   handleSubmit (event) {
     event.preventDefault()
     const form = event.target
-    signup()
+    const dispatch = this.props.dispatch
+    const name = this.inputs.name.value
+    const email = this.inputs.email.value
+    const password = this.inputs.password.value
+    const password2 = this.inputs.password2.value
+    dispatch(signup({email, name, password, password2}))
       .then(response => {
+        this.setState({alerts: response.alerts})
         if (response.success) {
           form.reset()
-          browserHistory.push('/')
-          this.props.dispatch(signupSuccess(response))
         } else {
-          this.props.dispatch(signupFailure(response))
+          // window.scrollTo(0, 0)
         }
       })
   }
 
   render () {
     const title = 'Join'
+    const errors = this.state.alerts.map(({text, type}, index) => {
+      return (
+        <div key={index} className={`alert alert-${type}`} role='alert'>
+          {text}
+        </div>
+      )
+    })
     return (
       <div>
         <Jumbotron title={title} />
 
         <div className='card'>
           <div className='card-block'>
+
+            {errors}
 
             <form onSubmit={this.handleSubmit}>
 

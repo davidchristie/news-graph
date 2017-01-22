@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux'
 
+import account from './account'
 import articles from './articles'
 import connections from './connections'
-import profile from './profile'
 
 export default combineReducers({
+  account,
   articles,
-  connections,
-  profile
+  connections
 })
