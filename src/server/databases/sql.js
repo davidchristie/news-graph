@@ -1,6 +1,6 @@
 const bcrypt = require('bcrypt')
 const knex = (environment => {
-  const config = require('../../knexfile')[environment]
+  const config = require('../../../knexfile')[environment]
   return require('knex')(config)
 })(process.env.NODE_ENV || 'development')
 
