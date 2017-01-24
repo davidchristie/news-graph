@@ -1,36 +1,60 @@
+/* eslint-env browser */
+
 import { post } from '../api'
 
 export function login ({email, password}) {
   return dispatch => {
     dispatch({type: 'LOGIN_PENDING'})
-    return post('login', {email, password})
+    return post('authenticate', {email, password})
       .then(response => response.data)
       .then(data => {
         if (data.success) {
-          dispatch({
-            message: data.message,
-            profile: data.profile,
-            type: 'LOGIN_SUCCESS'
-          })
+          return dispatch(loginSuccess(data.profile))
         } else {
-          dispatch({
-            message: data.message,
-            type: 'LOGIN_FAILURE'
-          })
+          return dispatch(loginFailure({
+            alerts: data.alerts,
+            message: data.message
+          }))
         }
       })
       .catch(error => {
-        dispatch({
-          message: error.message,
-          type: 'LOGIN_FAILURE'
-        })
+        return dispatch(loginFailure({
+          alerts: [
+            {
+              text: error.message,
+              type: 'danger'
+            }
+          ],
+          message: error.message
+        }))
       })
+  }
+}
+
+export function loginFailure ({alerts, message}) {
+  return {
+    alerts,
+    message,
+    success: false,
+    type: 'LOGIN_FAILURE'
+  }
+}
+
+export function loginSuccess (profile) {
+  localStorage.clear()
+  localStorage.setItem('profile', JSON.stringify(profile))
+  return {
+    alerts: [],
+    profile: profile,
+    success: true,
+    type: 'LOGIN_SUCCESS'
   }
 }
 
 export function logout () {
   return dispatch => {
     dispatch({type: 'LOGOUT_PENDING'})
+    localStorage.clear()
     return Promise.resolve(dispatch({type: 'LOGOUT_SUCCESS'}))
   }
 }
@@ -38,7 +62,7 @@ export function logout () {
 export function signup (details) {
   return dispatch => {
     dispatch({details, type: 'SIGNUP_PENDING'})
-    return post('signup', details)
+    return post('profiles', details)
       .then(response => response.data).then(data => {
         const alerts = data.alerts
         if (data.success) {
@@ -56,7 +80,8 @@ export function signup (details) {
         }
       })
       .catch(error => {
-        dispatch({
+        return dispatch({
+          alerts: [],
           message: error.message,
           type: 'SIGNUP_FAILURE'
         })

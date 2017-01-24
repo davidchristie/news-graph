@@ -1,3 +1,4 @@
+const neo4j = require('../../databases/neo4j')
 const sql = require('../../databases/sql')
 
 module.exports = (request, response) => {
@@ -30,7 +31,13 @@ module.exports = (request, response) => {
     .then(() => {
       if (errors.length === 0) {
         sql.createUser({email, name, password})
-          .then(() => {
+          .then(user => {
+            return neo4j.createProfile({
+              id: user.id,
+              name: user.name
+            })
+          })
+          .then(profile => {
             const alerts = [
               {
                 text: 'Signup successful',
@@ -41,6 +48,20 @@ module.exports = (request, response) => {
               alerts,
               message: 'Signup successful',
               success: true
+            })
+          })
+          .catch(error => {
+            console.log(error)
+            const alerts = [
+              {
+                text: 'Unable to connect to database',
+                type: 'danger'
+              }
+            ]
+            return response.json({
+              alerts,
+              message: 'Unable to connect to database.',
+              success: false
             })
           })
       } else {

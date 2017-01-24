@@ -1,17 +1,17 @@
 const express = require('express')
 
 const articles = require('./articles')
+const authenticate = require('./authenticate')
 const jsonwebtokenMiddleware = require('./jsonwebtoken-middleware')
-const login = require('./login')
 const signup = require('./signup')
 
 const router = express.Router()
 
 router.get('/articles', articles)
 
-router.post('/login', login)
+router.post('/authenticate', authenticate)
 
-router.post('/signup', signup)
+router.post('/profiles', signup)
 
 router.use(jsonwebtokenMiddleware)
 

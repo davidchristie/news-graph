@@ -2,8 +2,8 @@ import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { browserHistory, Link } from 'react-router'
 
-import { login, logout } from '../actions/account'
-import Login from '../components/Login'
+import { logout } from '../actions/account'
+import Login from './Login'
 import Logout from '../components/Logout'
 
 export const Account = class Account extends Component {
@@ -23,21 +23,13 @@ export const Account = class Account extends Component {
         </ul>
       )
     } else {
-      const submitLogin = event => {
-        event.preventDefault()
-        const form = event.target
-        const inputs = form.getElementsByTagName('input')
-        const email = inputs[0].value
-        const password = inputs[1].value
-        dispatch(login({email, password}))
-      }
       content = (
         <ul className='nav navbar-nav navbar-right'>
           <li className='nav-link'>
             <Link to='/join' className='btn btn-primary'>Signup</Link>
           </li>
           <li className='nav-link'>
-            <Login onSubmit={submitLogin} />
+            <Login />
           </li>
         </ul>
       )

@@ -16,6 +16,12 @@ module.exports = (request, response) => {
               expiresIn: '1h'
             })
             return response.json({
+              alerts: [
+                {
+                  text: 'Login successful',
+                  type: 'success'
+                }
+              ],
               message: 'Enjoy your token!',
               profile: {
                 email: user.email,
@@ -27,6 +33,12 @@ module.exports = (request, response) => {
             })
           } else {
             return response.json({
+              alerts: [
+                {
+                  text: 'Wrong password',
+                  type: 'danger'
+                }
+              ],
               success: false,
               message: 'Authentication failed. Wrong password.'
             })
@@ -34,6 +46,12 @@ module.exports = (request, response) => {
         })
       } else {
         return response.json({
+          alerts: [
+            {
+              text: 'User not found',
+              type: 'danger'
+            }
+          ],
           message: 'Authentication failed. User not found.',
           success: false
         })
@@ -42,7 +60,13 @@ module.exports = (request, response) => {
     .catch(error => {
       console.log(error)
       return response.json({
-        message: 'Authentication failed. Couldn\'t reach database.',
+        alerts: [
+          {
+            text: 'Unable to connect to database',
+            type: 'danger'
+          }
+        ],
+        message: 'Authentication failed. Unable to connect to database.',
         success: false
       })
     })

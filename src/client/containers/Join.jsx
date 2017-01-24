@@ -2,6 +2,7 @@ import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
 
 import { signup } from '../actions/account'
+import Alerts from '../components/Alerts'
 import Jumbotron from '../components/Jumbotron'
 
 export const Join = class Join extends React.Component {
@@ -33,22 +34,14 @@ export const Join = class Join extends React.Component {
   }
 
   render () {
-    const title = 'Join'
-    const errors = this.state.alerts.map(({text, type}, index) => {
-      return (
-        <div key={index} className={`alert alert-${type}`} role='alert'>
-          {text}
-        </div>
-      )
-    })
     return (
       <div>
-        <Jumbotron title={title} />
+        <Jumbotron title='Join' />
 
         <div className='card'>
           <div className='card-block'>
 
-            {errors}
+            <Alerts alerts={this.state.alerts} />
 
             <form onSubmit={this.handleSubmit}>
 

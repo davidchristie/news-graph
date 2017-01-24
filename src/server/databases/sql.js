@@ -14,8 +14,15 @@ function createUser ({ email, name, password }) {
   return bcrypt.hash(password, saltRounds).then(hash => {
     return knex('users').insert({
       email,
-      password: hash,
-      name
+      name,
+      password: hash
+    }).then(newIdValues => {
+      const id = newIdValues[0]
+      return {
+        email,
+        name,
+        id
+      }
     })
   })
 }
