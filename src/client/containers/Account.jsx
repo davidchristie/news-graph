@@ -11,13 +11,18 @@ export const Account = class Account extends Component {
     const dispatch = this.props.dispatch
     let content = null
     if (this.props.profile) {
+      const profile = this.props.profile
       const clickLogout = () => {
         dispatch(logout())
-        browserHistory.push('/')
       }
       content = (
         <ul className='nav navbar-nav navbar-right'>
-          <li className='nav-link' onClick={clickLogout}>
+
+          <li className='nav-link'>
+            <Link to={`/profile/${profile.id}`} className='btn btn-info'>Profile</Link>
+          </li>
+
+          <li className='nav-link'>
             <Logout onClick={clickLogout} />
           </li>
         </ul>

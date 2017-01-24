@@ -17,7 +17,7 @@ export default class Navbar extends React.Component {
           <ul className='navbar-nav mr-auto'>
 
             <li className='nav-link'>
-              <Link className='nav-link' to='about' activeClassName={'active'}>About</Link>
+              <Link className='nav-link' to='/about' activeClassName={'active'}>About</Link>
             </li>
 
             <li className='nav-link dropdown'>

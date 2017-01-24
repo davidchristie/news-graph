@@ -31,7 +31,7 @@ exports[`test Navbar renders correctly 1`] = `
           className="nav-link"
           onlyActiveOnIndex={false}
           style={Object {}}
-          to="about">
+          to="/about">
           About
         </Link>
       </li>

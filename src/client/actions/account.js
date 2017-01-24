@@ -64,27 +64,45 @@ export function signup (details) {
     dispatch({details, type: 'SIGNUP_PENDING'})
     return post('profiles', details)
       .then(response => response.data).then(data => {
-        const alerts = data.alerts
         if (data.success) {
-          return dispatch({
-            alerts,
-            message: data.message,
-            type: 'SIGNUP_SUCCESS'
-          })
+          return dispatch(signupSuccess())
         } else {
-          return dispatch({
-            alerts,
-            message: data.message,
-            type: 'SIGNUP_FAILURE'
-          })
+          return dispatch(signupFailure(data))
         }
       })
       .catch(error => {
-        return dispatch({
-          alerts: [],
-          message: error.message,
-          type: 'SIGNUP_FAILURE'
-        })
+        return dispatch(signupFailure({
+          alerts: [
+            {
+              text: error.message,
+              type: 'danger'
+            }
+          ],
+          message: error.message
+        }))
       })
+  }
+}
+
+export function signupFailure ({alerts, message}) {
+  return {
+    alerts,
+    message,
+    success: false,
+    type: 'SIGNUP_FAILURE'
+  }
+}
+
+export function signupSuccess () {
+  return {
+    alerts: [
+      {
+        text: 'Signup successful',
+        type: 'success'
+      }
+    ],
+    message: 'Signup successful',
+    success: true,
+    type: 'SIGNUP_SUCCESS'
   }
 }

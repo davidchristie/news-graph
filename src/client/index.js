@@ -13,6 +13,7 @@ import Join from './containers/Join'
 import Layout from './components/Layout'
 import ArticlePage from './containers/ArticlePage'
 import Home from './containers/Home'
+import Profile from './containers/Profile'
 import store from './store'
 
 // Check if already logged in to a profile
@@ -37,6 +38,7 @@ ReactDOM.render(
         <Route path='about' component={About} />
         <Route path='article/:id' component={ArticlePage} />
         <Route path='join' component={Join} />
+        <Route path='profile/:id' component={Profile} />
       </Route>
     </Router>
   </Provider>,

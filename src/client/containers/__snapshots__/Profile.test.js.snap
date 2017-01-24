@@ -1,0 +1,15 @@
+exports[`test Profile renders correctly 1`] = `
+<div>
+  <Jumbotron
+    title="Profile 1" />
+  <div
+    className="card">
+    <div
+      className="card-block">
+      <h2>
+        Public profile information
+      </h2>
+    </div>
+  </div>
+</div>
+`;

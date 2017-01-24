@@ -2,8 +2,17 @@ exports[`test Account renders correctly 1`] = `
 <ul
   className="nav navbar-nav navbar-right">
   <li
-    className="nav-link"
-    onClick={[Function]}>
+    className="nav-link">
+    <Link
+      className="btn btn-info"
+      onlyActiveOnIndex={false}
+      style={Object {}}
+      to="/profile/1">
+      Profile
+    </Link>
+  </li>
+  <li
+    className="nav-link">
     <Logout
       onClick={[Function]} />
   </li>

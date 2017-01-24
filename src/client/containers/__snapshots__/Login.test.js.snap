@@ -18,6 +18,8 @@ exports[`test Login renders correctly 1`] = `
         "minWidth": "300px",
       }
     }>
+    <Alerts
+      alerts={Array []} />
     <form
       acceptCharset="UTF-8"
       id="login-nav"

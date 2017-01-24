@@ -1,0 +1,7 @@
+exports[`test Alert renders correctly 1`] = `
+<div
+  className="alert alert-info"
+  role="alert">
+  Text
+</div>
+`;
