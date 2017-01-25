@@ -1,9 +1,7 @@
 exports[`test Home renders correctly 1`] = `
 <div>
   <Jumbotron
-    title="Home">
-    <Connect(PostArticle) />
-  </Jumbotron>
+    title="Home" />
   <ArticleCards
     articles={
       Array [

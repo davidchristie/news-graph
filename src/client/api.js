@@ -6,8 +6,8 @@ const instance = axios.create({
   timeout: 2000
 })
 
-export function getArticles () {
-  return get('articles')
+export function getFeaturedArticles () {
+  return get('articles/featured')
     .then(response => response.data.articles)
 }
 

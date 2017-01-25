@@ -23,7 +23,7 @@ if (localStorage.getItem('profile')) {
 }
 
 // Load articles from the API
-api.getArticles()
+api.getFeaturedArticles()
   .then(articles => {
     articles.forEach(article => {
       store.dispatch(addArticle(article))

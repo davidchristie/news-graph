@@ -6,10 +6,14 @@ exports[`test Profile renders correctly 1`] = `
     className="card">
     <div
       className="card-block">
-      <h2>
-        Public profile information
-      </h2>
+      <div>
+        <h2>
+          Public
+        </h2>
+      </div>
     </div>
   </div>
+  <Connect(Posts)
+    userId={1} />
 </div>
 `;

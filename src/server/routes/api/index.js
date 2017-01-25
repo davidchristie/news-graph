@@ -1,6 +1,6 @@
 const express = require('express')
 
-const articles = require('./articles')
+const api = require('../../api')
 const authenticate = require('./authenticate')
 const jsonwebtokenMiddleware = require('./jsonwebtoken-middleware')
 const neo4j = require('./../../databases/neo4j')
@@ -8,11 +8,32 @@ const signup = require('./signup')
 
 const router = express.Router()
 
-router.use('/articles', articles)
+router.get('/articles/featured', (request, response) => {
+  api.getArticles()
+    .then(articles => response.json({articles}))
+    .catch(error => response.send(error.message))
+})
 
 router.post('/authenticate', authenticate)
 
 router.post('/profiles', signup)
+
+router.get('/profiles/:id/posts', (request, response) => {
+  const userId = Number(request.params.id)
+  neo4j.getProfilePosts({userId})
+    .then(posts => {
+      return response.json({
+        posts,
+        success: true
+      })
+    })
+    .catch(error => {
+      return response.json({
+        message: error.message,
+        success: false
+      })
+    })
+})
 
 router.use(jsonwebtokenMiddleware)
 
@@ -22,13 +43,13 @@ router.post('/articles', (request, response) => {
   const url = request.body.url
   neo4j.postArticle({userId, url})
     .then(result => {
-      response.json({
+      return response.json({
         message: 'Article posted successfully',
         success: true
       })
     })
     .catch(error => {
-      response.json({
+      return response.json({
         message: error.message,
         success: false
       })

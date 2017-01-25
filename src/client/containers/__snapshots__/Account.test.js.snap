@@ -8,7 +8,7 @@ exports[`test Account renders correctly 1`] = `
       onlyActiveOnIndex={false}
       style={Object {}}
       to="/profile/1">
-      Profile
+      Name
     </Link>
   </li>
   <li

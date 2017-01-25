@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 
 import Jumbotron from '../components/Jumbotron'
 import PostArticle from './PostArticle'
+import Posts from './Posts'
 
 const publicContent = () => {
   return (
@@ -35,6 +36,7 @@ export const Profile = class Profile extends React.Component {
             {content}
           </div>
         </div>
+        <Posts userId={id} />
       </div>
     )
   }

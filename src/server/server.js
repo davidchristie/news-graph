@@ -1,13 +1,15 @@
+const bodyParser = require('body-parser')
 const cors = require('cors')
 const express = require('express')
-const bodyParser = require('body-parser')
-const path = require('path')
 const validator = require('express-validator')
+const morgan = require('morgan')
+const path = require('path')
 
 const api = require('./routes/api')
 
 const server = express()
 
+server.use(morgan('dev'))
 server.use(bodyParser.json())
 server.use(bodyParser.urlencoded({extended: false}))
 server.use(cors())

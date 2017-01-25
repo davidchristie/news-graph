@@ -8,6 +8,7 @@ import { PostArticle } from './PostArticle'
 
 test('PostArticle renders correctly', () => {
   const dispatch = () => {}
-  const wrapper = shallow(<PostArticle dispatch={dispatch} />)
+  const token = 'xxxx.xxxx.xxxx'
+  const wrapper = shallow(<PostArticle dispatch={dispatch} token={token} />)
   expect(toJson(wrapper)).toMatchSnapshot()
 })
