@@ -36,35 +36,32 @@ const getProfilePosts = ({userId}) => {
       return result
     })
     .then(result => {
-      const records = result.records
-      const posts = []
-      for (let record of records) {
+      return result.records.map(record => {
         const post = record._fields[0]
         const content = record._fields[1]
         const time = post.properties.time
-        posts.push({
+        return {
           content: content.properties,
           time,
           type: content.labels[0].toUpperCase()
-        })
-      }
-      return posts
+        }
+      })
     })
 }
 
-const postArticle = ({ userId, url }) => {
+const postArticle = ({ article, userId }) => {
   // TODO Only create article if it doesn't already exist.
   const session = driver.session()
   return session
     .run(`
       MATCH (profile:Profile)
       WHERE profile.id = {userId}
-      CREATE (article:Article {url: {url}})
+      CREATE (article:Article $article)
       CREATE (profile)-[:HAS_POSTED {time: {time}}]->(article)
       `, {
+        article,
         time: Date.now(),
-        userId,
-        url
+        userId
       })
     .then(result => {
       session.close()

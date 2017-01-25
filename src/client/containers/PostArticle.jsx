@@ -23,9 +23,9 @@ export class PostArticle extends React.Component {
   render () {
     return (
       <form onSubmit={this.handleSubmit}>
-        <div className='form-inline'>
-          <input className='form-control' type='url' value={this.state.value} onChange={this.handleChange} placeholder='Article' />
-          <input className='btn btn-outline-success' type='submit' value='POST' />
+        <div className='form-inline row'>
+          <input className='form-control col-10' type='url' value={this.state.value} onChange={this.handleChange} placeholder='Article' />
+          <input className='btn btn-outline-success col-2' type='submit' value='POST' />
         </div>
       </form>
     )
