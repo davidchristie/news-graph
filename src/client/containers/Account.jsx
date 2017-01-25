@@ -19,7 +19,7 @@ export const Account = class Account extends Component {
         <ul className='nav navbar-nav navbar-right'>
 
           <li className='nav-link'>
-            <Link to={`/profile/${profile.id}`} className='btn btn-info'>Profile</Link>
+            <Link to={`/profile/${profile.id}`} className='btn btn-info'>{profile.name}</Link>
           </li>
 
           <li className='nav-link'>

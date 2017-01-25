@@ -7,14 +7,14 @@ const driver = neo4j.driver(
   neo4j.auth.basic(USERNAME, PASSWORD)
 )
 
-const createProfile = ({id, name}) => {
+const createProfile = ({ id, name }) => {
   const session = driver.session()
   return session
     .run('CREATE (a:Profile {id: {id}, name: {name}})', {id, name})
-    .then(function () {
+    .then(() => {
       session.close()
     })
-    .then(function (result) {
+    .then(() => {
       return {
         id,
         name
@@ -22,6 +22,22 @@ const createProfile = ({id, name}) => {
     })
 }
 
+const postArticle = ({ userId, url }) => {
+  const session = driver.session()
+  return session
+    .run(`
+      MATCH (profile:Profile)
+      WHERE profile.id = {userId}
+      CREATE (article:Article {url: {url}})
+      CREATE (profile)-[:HAS_POSTED]->(article)
+      `, {userId, url})
+    .then(result => {
+      session.close()
+      return result
+    })
+}
+
 module.exports = {
-  createProfile
+  createProfile,
+  postArticle
 }

@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
 
-import { postArticle } from '../actions'
+import { postArticle } from '../actions/articles'
 
 export class PostArticle extends React.Component {
   constructor (props) {
@@ -15,24 +15,33 @@ export class PostArticle extends React.Component {
   }
   handleSubmit (event) {
     event.preventDefault()
-    this.props.dispatch(postArticle(this.state.value))
+    const token = this.props.token
+    const url = this.state.value
+    this.props.dispatch(postArticle({token, url}))
     this.setState({value: ''})
   }
   render () {
     return (
       <form onSubmit={this.handleSubmit}>
-        <label>
-          Article:
-          <input type='url' value={this.state.value} onChange={this.handleChange} />
-        </label>
-        <input type='submit' value='POST' />
+        <div className='form-inline'>
+          <input className='form-control' type='url' value={this.state.value} onChange={this.handleChange} placeholder='Article' />
+          <input className='btn btn-outline-success' type='submit' value='POST' />
+        </div>
       </form>
     )
   }
 }
 
 PostArticle.propTypes = {
-  dispatch: PropTypes.func.isRequired
+  dispatch: PropTypes.func.isRequired,
+  token: PropTypes.string.isRequired
 }
 
-export default connect()(PostArticle)
+const mapStateToProps = state => {
+  const profile = state.app.account.profile
+  return {
+    token: profile ? profile.token : null
+  }
+}
+
+export default connect(mapStateToProps)(PostArticle)

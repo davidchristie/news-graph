@@ -2,19 +2,37 @@ import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
 
 import Jumbotron from '../components/Jumbotron'
+import PostArticle from './PostArticle'
+
+const publicContent = () => {
+  return (
+    <div>
+      <h2>Public</h2>
+    </div>
+  )
+}
+
+const privateContent = (profile) => {
+  return (
+    <div>
+      <h2>Private</h2>
+      <PostArticle />
+    </div>
+  )
+}
 
 export const Profile = class Profile extends React.Component {
   render () {
     const id = Number(this.props.params.id)
     const profile = this.props.profile
-    const title = `Profile ${id}`
-    const info = profile && profile.id === id ? 'Private profile information' : 'Public profile information'
+    const title = profile ? profile.name : `Profile ${id}`
+    const content = profile && profile.id === id ? privateContent(profile) : publicContent()
     return (
       <div>
         <Jumbotron title={title} />
         <div className='card'>
           <div className='card-block'>
-            <h2>{info}</h2>
+            {content}
           </div>
         </div>
       </div>

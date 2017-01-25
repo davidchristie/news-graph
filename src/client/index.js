@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import { browserHistory, IndexRoute, Route, Router } from 'react-router'
 
-import { addArticle } from './actions'
+import { addArticle } from './actions/articles'
 import { loginSuccess } from './actions/account'
 import * as api from './api'
 import About from './components/About'

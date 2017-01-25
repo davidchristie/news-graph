@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 
 import ArticleCards from '../components/ArticleCards'
 import Jumbotron from '../components/Jumbotron'
-import PostArticle from './PostArticle'
 
 export const Home = class Home extends React.Component {
   render () {
@@ -11,9 +10,7 @@ export const Home = class Home extends React.Component {
     const articles = this.props.articles
     return (
       <div>
-        <Jumbotron title={title}>
-          <PostArticle />
-        </Jumbotron>
+        <Jumbotron title={title} />
         <ArticleCards articles={articles} />
       </div>
     )
