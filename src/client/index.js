@@ -4,6 +4,9 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import { browserHistory, IndexRoute, Route, Router } from 'react-router'
+import { syncHistoryWithStore } from 'react-router-redux'
+import { applyMiddleware, compose, createStore } from 'redux'
+import thunk from 'redux-thunk'
 
 import { addArticle } from './actions/articles'
 import { loginSuccess } from './actions/account'
@@ -14,7 +17,16 @@ import Layout from './components/Layout'
 import ArticlePage from './containers/ArticlePage'
 import Home from './containers/Home'
 import Profile from './containers/Profile'
-import store from './store'
+import reducer from './reducers'
+
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
+
+const store = createStore(
+  reducer,
+  composeEnhancers(
+    applyMiddleware(thunk)
+  )
+)
 
 // Check if already logged in to a profile
 if (localStorage.getItem('profile')) {
@@ -30,9 +42,11 @@ api.getFeaturedArticles()
     })
   })
 
+const history = syncHistoryWithStore(browserHistory, store)
+
 ReactDOM.render(
   <Provider store={store}>
-    <Router history={browserHistory}>
+    <Router history={history}>
       <Route path='/' component={Layout}>
         <IndexRoute component={Home} />
         <Route path='about' component={About} />

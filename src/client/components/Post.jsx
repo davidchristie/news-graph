@@ -5,8 +5,8 @@ import React, { PropTypes } from 'react'
 const Article = props => {
   const article = props.article
   const thumbnail = article.thumbnail_url ? <img className='card-img-top img-fluid rounded float-left' src={article.thumbnail_url} alt='Article thumbnail' style={{width: '300px'}} /> : null
-  const author = article.author ? <p>{article.author}</p> : null
-  const provider = article.provider_name ? <p>{article.provider_name}</p> : null
+  const author = article.author ? <p className='card-text'>{article.author}</p> : null
+  const provider = article.provider_name ? <p className='card-text'>{article.provider_name}</p> : null
   return (
     <div>
       {thumbnail}
@@ -14,9 +14,9 @@ const Article = props => {
         <h4>{article.title}</h4>
         <p className='card-text'>
           {article.description}
-          {author}
-          {provider}
         </p>
+        {author}
+        {provider}
       </div>
     </div>
   )
