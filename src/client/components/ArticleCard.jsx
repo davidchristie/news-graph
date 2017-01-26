@@ -24,7 +24,7 @@ export default class ArticleCard extends React.Component {
       <div className='card'>
         {image}
         <div className='card-block'>
-          <Link to={`articles?url=${url}`}>
+          <Link to={`/articles?url=${url}`}>
             <h4 className='card-title'>{title}</h4>
           </Link>
           <p className='card-text'>{description}</p>

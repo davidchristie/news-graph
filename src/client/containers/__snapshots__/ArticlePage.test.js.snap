@@ -1,8 +1,8 @@
 exports[`test ArticlePage renders correctly 1`] = `
 <div>
   <Jumbotron
-    lead="British tour operator Thomas Cook started evacuating nearly 1,000 holidaymakers from Gambia on Wednesday after President Yahya Jammeh declared a state of emergency on his final day in office, increasing the chances of civil unrest."
-    title="British tour operator evacuating 1,000 Gambia holidaymakers" />
+    lead="Description"
+    title="Title" />
   <div
     className="card">
     <div
@@ -11,18 +11,6 @@ exports[`test ArticlePage renders correctly 1`] = `
         className="card-title">
         Connections
       </h2>
-      <Connect(ArticleNetwork)
-        article={
-          Object {
-            "author": "Reuters Editorial",
-            "description": "British tour operator Thomas Cook started evacuating nearly 1,000 holidaymakers from Gambia on Wednesday after President Yahya Jammeh declared a state of emergency on his final day in office, increasing the chances of civil unrest.",
-            "id": 1,
-            "publishedAt": "2017-01-18T08:29:05Z",
-            "title": "British tour operator evacuating 1,000 Gambia holidaymakers",
-            "url": "http://www.reuters.com/article/us-gambia-politics-idUSKBN1520NL",
-            "urlToImage": "http://s1.reutersmedia.net/resources/r/?m=02&d=20170118&t=2&i=1169143813&w=&fh=545px&fw=&ll=&pl=&sq=&r=LYNXMPED0H0G0",
-          }
-        } />
     </div>
   </div>
 </div>

@@ -1,23 +1,25 @@
 import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
 
-import ArticleNetwork from './ArticleNetwork'
+// import ArticleNetwork from './ArticleNetwork'
 import Jumbotron from '../components/Jumbotron'
 
 export const ArticlePage = class ArticlePage extends React.Component {
   render () {
-    const url = this.props.query.url
+    const url = this.props.location.query.url
     const articles = this.props.articles
-    const article = articles.find(article => article.url === url)
-    const title = article.title
-    const description = article.description
+    const title = 'Title'
+    const description = 'Description'
+    // const article = articles[url]
+    // const title = article.title
+    // const description = article.description
+    // <ArticleNetwork article={article} />
     return (
       <div>
         <Jumbotron title={title} lead={description} />
         <div className='card'>
           <div className='card-block'>
             <h2 className='card-title'>Connections</h2>
-            <ArticleNetwork article={article} />
           </div>
         </div>
       </div>
@@ -30,8 +32,10 @@ ArticlePage.propTypes = {
     title: PropTypes.string.isRequired,
     url: PropTypes.string.isRequired
   }).isRequired).isRequired,
-  query: PropTypes.shape({
-    url: PropTypes.string.isRequired
+  location: PropTypes.shape({
+    query: PropTypes.shape({
+      url: PropTypes.string.isRequired
+    }).isRequired
   }).isRequired
 }
 

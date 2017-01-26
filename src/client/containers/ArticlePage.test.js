@@ -9,6 +9,7 @@ import { ArticlePage } from './ArticlePage'
 
 test('ArticlePage renders correctly', () => {
   const query = {url: articles[0].url}
-  const wrapper = shallow(<ArticlePage articles={articles} query={query} />)
+  const location = {query}
+  const wrapper = shallow(<ArticlePage articles={articles} location={location} />)
   expect(toJson(wrapper)).toMatchSnapshot()
 })

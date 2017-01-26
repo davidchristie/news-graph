@@ -6,7 +6,7 @@ exports[`test ArticleCard renders correctly 1`] = `
     <Link
       onlyActiveOnIndex={false}
       style={Object {}}
-      to="articles?url=http://www.reuters.com/article/us-gambia-politics-idUSKBN1520NL">
+      to="/articles?url=http://www.reuters.com/article/us-gambia-politics-idUSKBN1520NL">
       <h4
         className="card-title">
         British tour operator evacuating 1,000 Gambia holidaymakers

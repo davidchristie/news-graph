@@ -12,7 +12,7 @@ const Article = props => {
     <div>
       {thumbnail}
       <div>
-        <Link to={`articles?url=${url}`}>
+        <Link to={`/articles?url=${url}`}>
           <h4>{article.title}</h4>
         </Link>
         <p className='card-text'>

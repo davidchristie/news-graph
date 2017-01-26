@@ -50,7 +50,7 @@ ReactDOM.render(
       <Route path='/' component={Layout}>
         <IndexRoute component={Home} />
         <Route path='about' component={About} />
-        <Route path='article/:id' component={ArticlePage} />
+        <Route path='articles' component={ArticlePage} />
         <Route path='join' component={Join} />
         <Route path='profile/:id' component={Profile} />
       </Route>
