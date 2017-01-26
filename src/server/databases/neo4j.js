@@ -49,6 +49,32 @@ const getProfilePosts = ({userId}) => {
     })
 }
 
+const getRecentArticles = () => {
+  const session = driver.session()
+  return session
+    .run(`
+      MATCH ()-[post:HAS_POSTED]->(article:Article)
+      RETURN post, article
+      ORDER BY post.time DESC
+      LIMIT 10
+      `)
+    .then(result => {
+      session.close()
+      return result
+    })
+    .then(result => {
+      return result.records.map(record => {
+        const post = record._fields[0]
+        const article = record._fields[1]
+        const time = post.properties.time
+        return {
+          article: article.properties,
+          time
+        }
+      })
+    })
+}
+
 const postArticle = ({ article, userId }) => {
   // TODO Only create article if it doesn't already exist.
   const session = driver.session()
@@ -72,5 +98,6 @@ const postArticle = ({ article, userId }) => {
 module.exports = {
   createProfile,
   getProfilePosts,
+  getRecentArticles,
   postArticle
 }

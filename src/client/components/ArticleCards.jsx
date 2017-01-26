@@ -6,9 +6,9 @@ export default class ArticleCards extends React.Component {
     const articles = this.props.articles
     return (
       <div className='card-columns'>
-        {articles.map(article =>
+        {articles.map((article, index) =>
           <ArticleCard
-            key={article.id}
+            key={index}
             article={article}
           />
         )}
@@ -19,7 +19,6 @@ export default class ArticleCards extends React.Component {
 
 ArticleCards.propTypes = {
   articles: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.number.isRequired,
     url: PropTypes.string.isRequired
   })).isRequired
 }

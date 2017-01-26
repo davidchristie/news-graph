@@ -37,8 +37,8 @@ if (localStorage.getItem('profile')) {
 // Load articles from the API
 api.getFeaturedArticles()
   .then(articles => {
-    articles.forEach(article => {
-      store.dispatch(addArticle(article))
+    articles.forEach(featured => {
+      store.dispatch(addArticle(featured.article))
     })
   })
 

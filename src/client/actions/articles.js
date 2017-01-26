@@ -1,11 +1,9 @@
 import { post } from '../api'
 
-let nextId = 1
-
 // TODO Remove this
 export function addArticle (article) {
   return {
-    article: Object.assign({}, article, {id: nextId++}),
+    article: Object.assign({}, article),
     type: 'ADD_ARTICLE'
   }
 }

@@ -1,37 +1,34 @@
-import moment from 'moment'
+// import moment from 'moment'
 import React, { PropTypes } from 'react'
 import { Link } from 'react-router'
 
-function footer (publishedAt) {
-  const date = moment(publishedAt).format('MMMM Do YYYY, h:mm:ss a')
-  if (publishedAt) {
-    return (
-      <div className='card-footer'>
-        {date}
-      </div>
-    )
-  }
-}
+// function footer (publishedAt) {
+//   const date = moment(publishedAt).format('MMMM Do YYYY, h:mm:ss a')
+//   if (publishedAt) {
+//     return (
+//       <div className='card-footer'>
+//         {date}
+//       </div>
+//     )
+//   }
+// }
 
 export default class ArticleCard extends React.Component {
   render () {
     const article = this.props.article
-    const id = article.id
+    const url = article.url
     const title = article.title
     const description = article.description
-    // const url = article.url
-    const urlToImage = article.urlToImage
-    const publishedAt = article.publishedAt
+    const image = article.thumbnail_url ? <img className='card-img-top img-fluid' src={article.thumbnail_url} alt='Card image cap' /> : null
     return (
       <div className='card'>
-        <img className='card-img-top img-fluid' src={urlToImage} alt='Card image cap' />
+        {image}
         <div className='card-block'>
-          <Link to={`article/${id}`}>
+          <Link to={`articles?url=${url}`}>
             <h4 className='card-title'>{title}</h4>
           </Link>
           <p className='card-text'>{description}</p>
         </div>
-        {footer(publishedAt)}
       </div>
     )
   }
@@ -39,7 +36,7 @@ export default class ArticleCard extends React.Component {
 
 ArticleCard.propTypes = {
   article: PropTypes.shape({
-    id: PropTypes.number.isRequired,
+    // id: PropTypes.number.isRequired,
     url: PropTypes.string.isRequired
   }).isRequired
 }

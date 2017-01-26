@@ -19,7 +19,6 @@ export const Home = class Home extends React.Component {
 
 Home.propTypes = {
   articles: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.number.isRequired,
     url: PropTypes.string.isRequired
   }).isRequired).isRequired
 }

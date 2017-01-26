@@ -1,7 +1,8 @@
 const express = require('express')
 
 const iframely = require('../../externals/iframely')
-const newsapi = require('../../externals/newsapi')
+// const newsapi = require('../../externals/newsapi')
+const articles = require('./articles')
 const authenticate = require('./authenticate')
 const jsonwebtokenMiddleware = require('./jsonwebtoken-middleware')
 const neo4j = require('./../../databases/neo4j')
@@ -9,11 +10,7 @@ const signup = require('./signup')
 
 const router = express.Router()
 
-router.get('/articles/featured', (request, response) => {
-  newsapi.getArticles()
-    .then(articles => response.json({articles}))
-    .catch(error => response.send(error.message))
-})
+router.use('/articles', articles)
 
 router.post('/authenticate', authenticate)
 

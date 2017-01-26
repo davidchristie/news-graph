@@ -1,16 +1,12 @@
 exports[`test ArticleCard renders correctly 1`] = `
 <div
   className="card">
-  <img
-    alt="Card image cap"
-    className="card-img-top img-fluid"
-    src="http://s1.reutersmedia.net/resources/r/?m=02&d=20170118&t=2&i=1169143813&w=&fh=545px&fw=&ll=&pl=&sq=&r=LYNXMPED0H0G0" />
   <div
     className="card-block">
     <Link
       onlyActiveOnIndex={false}
       style={Object {}}
-      to="article/1">
+      to="articles?url=http://www.reuters.com/article/us-gambia-politics-idUSKBN1520NL">
       <h4
         className="card-title">
         British tour operator evacuating 1,000 Gambia holidaymakers
@@ -20,10 +16,6 @@ exports[`test ArticleCard renders correctly 1`] = `
       className="card-text">
       British tour operator Thomas Cook started evacuating nearly 1,000 holidaymakers from Gambia on Wednesday after President Yahya Jammeh declared a state of emergency on his final day in office, increasing the chances of civil unrest.
     </p>
-  </div>
-  <div
-    className="card-footer">
-    January 18th 2017, 9:29:05 pm
   </div>
 </div>
 `;

@@ -8,7 +8,7 @@ import articles from '../examples/articles'
 import { ArticlePage } from './ArticlePage'
 
 test('ArticlePage renders correctly', () => {
-  const params = {id: '1'}
-  const wrapper = shallow(<ArticlePage articles={articles} params={params} />)
+  const query = {url: articles[0].url}
+  const wrapper = shallow(<ArticlePage articles={articles} query={query} />)
   expect(toJson(wrapper)).toMatchSnapshot()
 })
