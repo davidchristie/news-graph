@@ -24,5 +24,5 @@ Jumbotron.propTypes = {
   children: PropTypes.element,
   lead: PropTypes.string,
   text: PropTypes.string,
-  title: PropTypes.string.isRequired
+  title: PropTypes.string
 }

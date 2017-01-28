@@ -83,8 +83,8 @@ function createNetwork (container, data, options) {
 
 function stateToProps (state) {
   return {
-    articles: state.app.articles,
-    connections: state.app.connections
+    articles: state.articles,
+    connections: state.connections
   }
 }
 

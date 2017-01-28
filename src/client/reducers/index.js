@@ -1,9 +1,15 @@
 import { routerReducer } from 'react-router-redux'
 import { combineReducers } from 'redux'
 
-import app from './app'
+import account from './account'
+import articles from './articles'
+import connections from './connections'
+import profiles from './profiles'
 
 export default combineReducers({
-  app,
+  account,
+  articles,
+  connections,
+  profiles,
   routing: routerReducer
 })

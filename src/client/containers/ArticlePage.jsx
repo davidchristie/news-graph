@@ -41,7 +41,7 @@ ArticlePage.propTypes = {
 
 function mapStateToProps (state) {
   return {
-    articles: state.app.articles
+    articles: state.articles
   }
 }
 

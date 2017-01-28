@@ -51,6 +51,6 @@ Account.propTypes = {
 
 export default connect(state => {
   return {
-    profile: state.app.account.profile
+    profile: state.account.profile
   }
 })(Account)

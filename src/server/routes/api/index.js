@@ -19,20 +19,14 @@ router.use('/graphql', graphql)
 
 router.post('/profiles', signup)
 
-router.get('/profiles/:id/posts', (request, response) => {
+router.get('/profiles/:id', (request, response) => {
   const userId = Number(request.params.id)
-  neo4j.getProfilePosts({userId})
-    .then(posts => {
-      return response.json({
-        posts,
-        success: true
-      })
+  neo4j.getProfileById({userId})
+    .then(profile => {
+      return response.status(200).json(profile)
     })
     .catch(error => {
-      return response.json({
-        message: error.message,
-        success: false
-      })
+      return response.status(500).send(error.message)
     })
 })
 

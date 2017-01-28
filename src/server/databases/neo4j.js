@@ -22,7 +22,29 @@ const createProfile = ({ id, name }) => {
     })
 }
 
-const getProfilePosts = ({userId}) => {
+const getProfileById = ({ userId }) => {
+  const session = driver.session()
+  return session
+    .run(`
+      MATCH (profile:Profile)
+      WHERE profile.id = {userId}
+      RETURN profile
+      `, {userId})
+    .then(result => {
+      session.close()
+      return result
+    })
+    .then(result => {
+      const profile = result.records[0]._fields[0].properties
+      return getProfilePosts({userId})
+        .then(posts => {
+          profile.posts = posts
+          return profile
+        })
+    })
+}
+
+const getProfilePosts = ({ userId }) => {
   const session = driver.session()
   return session
     .run(`
@@ -97,6 +119,7 @@ const postArticle = ({ article, userId }) => {
 
 module.exports = {
   createProfile,
+  getProfileById,
   getProfilePosts,
   getRecentArticles,
   postArticle

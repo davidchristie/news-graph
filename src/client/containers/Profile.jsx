@@ -1,61 +1,61 @@
 import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
 
+import { fetchProfile } from '../actions/profiles'
 import Jumbotron from '../components/Jumbotron'
+import Posts from '../components/Posts'
 import PostArticle from './PostArticle'
-import Posts from './Posts'
-
-const publicContent = () => {
-  return (
-    <div>
-      <h2>Public</h2>
-    </div>
-  )
-}
-
-const privateContent = (profile) => {
-  return (
-    <div>
-      <h2>Private</h2>
-      <PostArticle />
-    </div>
-  )
-}
 
 export const Profile = class Profile extends React.Component {
+  componentDidMount () {
+    this.props.fetchProfile()
+  }
   render () {
-    const id = Number(this.props.params.id)
     const profile = this.props.profile
-    const title = profile ? profile.name : `Profile ${id}`
-    const content = profile && profile.id === id ? privateContent(profile) : publicContent()
+    const { name, posts, token } = profile
     return (
       <div>
-        <Jumbotron title={title} />
+        <Jumbotron title={name} />
         <div className='card'>
           <div className='card-block'>
-            {content}
+            {token ? <PostArticle profile={profile} /> : null}
           </div>
         </div>
-        <Posts userId={id} />
+        {posts ? <Posts posts={posts} /> : null}
       </div>
     )
   }
 }
 
 Profile.propTypes = {
-  params: PropTypes.shape({
-    id: PropTypes.string.isRequired
-  }).isRequired,
+  fetchProfile: PropTypes.func.isRequired,
   profile: PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    name: PropTypes.string.isRequired
-  })
+    name: PropTypes.string,
+    posts: PropTypes.arrayOf(PropTypes.object),
+    token: PropTypes.string
+  }).isRequired
 }
 
-function mapStateToProps (state) {
+const mapStateToProps = (state, ownProps) => {
+  const id = Number(ownProps.params.id)
+  const profile = Object.assign({}, state.profiles[id])
+  const account = state.account
+  if (account.profile && account.profile.id === profile.id) {
+    profile.token = account.profile.token
+  }
+  return {profile}
+}
+
+const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    profile: state.app.account.profile
+    fetchProfile: () => {
+      const userId = Number(ownProps.params.id)
+      dispatch(fetchProfile({userId}))
+    }
   }
 }
 
-export default connect(mapStateToProps)(Profile)
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Profile)

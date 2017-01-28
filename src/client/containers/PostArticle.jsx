@@ -2,6 +2,7 @@ import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
 
 import { postArticle } from '../actions/articles'
+import { fetchProfile } from '../actions/profiles'
 
 export class PostArticle extends React.Component {
   constructor (props) {
@@ -15,9 +16,8 @@ export class PostArticle extends React.Component {
   }
   handleSubmit (event) {
     event.preventDefault()
-    const token = this.props.token
     const url = this.state.value
-    this.props.dispatch(postArticle({token, url}))
+    this.props.postArticle(url)
     this.setState({value: ''})
   }
   render () {
@@ -33,15 +33,25 @@ export class PostArticle extends React.Component {
 }
 
 PostArticle.propTypes = {
-  dispatch: PropTypes.func.isRequired,
-  token: PropTypes.string.isRequired
+  postArticle: PropTypes.func.isRequired,
+  profile: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    token: PropTypes.string.isRequired
+  }).isRequired
 }
 
-const mapStateToProps = state => {
-  const profile = state.app.account.profile
+const mapDispatchToProps = (dispatch, ownProps) => {
+  const profile = ownProps.profile
+  const token = profile.token
   return {
-    token: profile ? profile.token : null
+    postArticle: url => {
+      dispatch(postArticle({token, url}))
+        .then(() => dispatch(fetchProfile({userId: profile.id})))
+    }
   }
 }
 
-export default connect(mapStateToProps)(PostArticle)
+export default connect(
+  null,
+  mapDispatchToProps
+)(PostArticle)
