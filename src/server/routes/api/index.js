@@ -4,6 +4,7 @@ const iframely = require('../../externals/iframely')
 // const newsapi = require('../../externals/newsapi')
 const articles = require('./articles')
 const authenticate = require('./authenticate')
+const graphql = require('./graphql')
 const jsonwebtokenMiddleware = require('./jsonwebtoken-middleware')
 const neo4j = require('./../../databases/neo4j')
 const signup = require('./signup')
@@ -13,6 +14,8 @@ const router = express.Router()
 router.use('/articles', articles)
 
 router.post('/authenticate', authenticate)
+
+router.use('/graphql', graphql)
 
 router.post('/profiles', signup)
 
